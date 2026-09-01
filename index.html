@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harsha Matta | Systems, Mobile & Quantitative Research</title>
+  <meta name="description" content="Personal portfolio and resume of Harsha Matta. CS & Math at UNC Chapel Hill. Builder across Apple systems (Swift), scientific computing (C++ deal.II), and quantitative modeling.">
+  <meta name="author" content="Harsha Matta">
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://harshamatta.github.io/">
+  <meta property="og:title" content="Harsha Matta | Portfolio & Engineering">
+  <meta property="og:description" content="CS & Math at UNC Chapel Hill. Software engineering, C++ scientific computing, and quantitative volatility modeling.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo">Harsha Matta</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="assets/resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">Resume ↗</a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme" title="Toggle Light/Dark Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero / Intro -->
+    <section id="about" class="hero-section">
+      <div class="hero-badge">CS & Math @ UNC Chapel Hill</div>
+      <h1 class="hero-title">Building native systems, scientific computing tools, and quantitative models.</h1>
+      <p class="hero-intro">
+        I am an undergraduate studying Computer Science and Mathematics at <strong>UNC Chapel Hill</strong> (targeting May 2028, junior standing by credits). Grew up in Madison, Alabama, spent 5 years in London at Sutton Grammar School, and now based in North Carolina.
+      </p>
+      <p class="hero-sub">
+        My technical work spans local-first Apple ecosystem tools (Swift/SwiftUI), numerical methods in high-performance C++ (contributor to <code>deal.II</code>), and empirical derivative / volatility research (Python).
+      </p>
+
+      <div class="social-pills">
+        <a href="mailto:harsha.v.matta@gmail.com" class="pill-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          harsha.v.matta@gmail.com
+        </a>
+        <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="pill-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/harshamatta" target="_blank" rel="noopener" class="pill-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://medium.com/@harsha.v.matta" target="_blank" rel="noopener" class="pill-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+          Medium Writing
+        </a>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-block">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="filter-group" role="tablist">
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="systems">Systems & Mobile</button>
+          <button class="filter-chip" data-filter="quant">Quant & Analytics</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Next -->
+        <article class="project-card" data-category="systems">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="badge badge-active">In Progress</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-name">Next — Unified Markdown Workspace</h3>
+            <p class="project-tagline">Local-first productivity suite for iOS, iPadOS, macOS, and visionOS</p>
+          </div>
+          <div class="project-body">
+            <ul class="project-bullets">
+              <li>Engineered a local-first plain-text Markdown (<code>.md</code>) storage engine with real-time iCloud Drive sync via <code>NSFilePresenter</code>, eliminating proprietary database lock-in.</li>
+              <li>Implemented line-level string-hash verification to prevent multi-device write collisions without overwriting surrounding user notes.</li>
+              <li>Built a custom 24-hour tactile timeline canvas featuring drag-and-drop task staging, edge-stretching duration adjustments, and automated midnight rollover tracking.</li>
+              <li>Integrated dual AI architecture: on-device Apple Intelligence Foundation Models and user-supplied API keys (OpenAI / Anthropic) to parse natural language schedules locally.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span>Swift</span>
+              <span>SwiftUI</span>
+              <span>AppKit</span>
+              <span>Combine</span>
+              <span>App Intents</span>
+              <span>NSFilePresenter</span>
+            </div>
+            <div class="project-links">
+              <a href="https://harshamatta.github.io/projNext/" target="_blank" rel="noopener" class="link-btn">Site ↗</a>
+              <a href="https://github.com/HarshaMatta/projNext" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: deal.II -->
+        <article class="project-card" data-category="systems">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="badge badge-os">Open Source</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-name">deal.II — C++ Scientific Computing Library</h3>
+            <p class="project-tagline">Numerical methods & finite element infrastructure contributor</p>
+          </div>
+          <div class="project-body">
+            <ul class="project-bullets">
+              <li>Authored and merged upstream pull requests in a large-scale C++ finite element library used for high-performance numerical simulations.</li>
+              <li>Diagnosed and patched numerical inaccuracies in Real-to-Unit Affine coordinate mapping for distorted non-hypercube mesh cells.</li>
+              <li>Decoupled coordinate transformation routines to boost calculation throughput across high-dimensional simulation bounds.</li>
+              <li>Ongoing work extending affine approximation routines to simplex and mixed-element mesh topologies.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span>C++</span>
+              <span>Numerical Analysis</span>
+              <span>Finite Elements</span>
+              <span>HPC</span>
+              <span>Git</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/dealii/dealii" target="_blank" rel="noopener" class="link-btn">dealii/dealii ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: InOffice Tracker -->
+        <article class="project-card" data-category="systems">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="badge badge-published">App Store</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-name">InOffice Tracker</h3>
+            <p class="project-tagline">Privacy-first hybrid work attendance tracker built for iOS</p>
+          </div>
+          <div class="project-body">
+            <ul class="project-bullets">
+              <li>Engineered a zero-telemetry attendance tracker using hardware-level geofencing (<code>CLCircularRegion</code>) with zero background battery drain and 30-minute notification throttling.</li>
+              <li>Protected workplace GPS coordinates using native iOS Keychain (<code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>), enabling secure background reads while the device is locked.</li>
+              <li>Built a local SQLite persistence engine with SwiftData and an automated CSV exporter with formula-injection shielding (sanitizing <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>).</li>
+              <li>Designed goal progress rings that dynamically scale required in-office targets based on remaining calendar working days.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span>Swift</span>
+              <span>SwiftUI</span>
+              <span>SwiftData</span>
+              <span>CoreLocation</span>
+              <span>MapKit</span>
+              <span>Keychain API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: VRP Research -->
+        <article class="project-card" data-category="quant">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="badge badge-research">Research</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-name">Volatility Risk Premium (VRP) Study & Pipeline</h3>
+            <p class="project-tagline">Quantitative options pricing pipeline & interactive strategy simulation</p>
+          </div>
+          <div class="project-body">
+            <ul class="project-bullets">
+              <li>Built an end-to-end 5-phase data ingestion and research pipeline in Python analyzing daily SPX and VIX price history from 2010 to present.</li>
+              <li>Aligned 30-day forward annualized realized volatility (RV = std(r_t, 30) × √252) against implied VIX, verifying that VRP is positive on &gt;85% of trading days.</li>
+              <li>Partitioned market regimes (Bull, Crisis, Bear) and proved that VRP inverts during acute systemic crashes (e.g. March 2020 COVID shock, Feb 2018 Volmageddon).</li>
+              <li>Simulated monthly variance swap payoff models (PnL = w · [VIX² - RV²]) with inverse-volatility sizing, leverage ceilings, and VIX circuit breakers; deployed as an interactive Streamlit app.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Streamlit</span>
+              <span>Plotly</span>
+              <span>yfinance</span>
+            </div>
+            <div class="project-links">
+              <a href="https://medium.com/@harsha.v.matta" target="_blank" rel="noopener" class="link-btn">Article ↗</a>
+              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Box Office Analytics -->
+        <article class="project-card" data-category="quant">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="badge badge-quant">Data Modeling</span>
+              <span class="project-year">2025 – 2026</span>
+            </div>
+            <h3 class="project-name">Indian Box Office Forecasting & Multiplier Modeling</h3>
+            <p class="project-tagline">Empirical entertainment analytics and regional penetration models</p>
+          </div>
+          <div class="project-body">
+            <ul class="project-bullets">
+              <li>Developed quantitative revenue forecasting models for Indian theatrical releases using historical comparable-film datasets.</li>
+              <li>Modeled weekend-to-lifetime multiplier decay trajectories, opening day occupancy coefficients, and distributor share realization across distinct regional theatrical territories (Telugu, Hindi, Tamil, Kannada, Malayalam).</li>
+              <li>Structured reproducible Excel forecasting engines and comprehensive PDF diagnostic research deliverables for commercial analysis.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span>Data Analysis</span>
+              <span>Financial Modeling</span>
+              <span>Multiplier Analytics</span>
+              <span>Excel/VBA</span>
+            </div>
+            <div class="project-links">
+              <span class="text-muted">Research Deliverables</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Paatam -->
+        <article class="project-card" data-category="systems">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="badge badge-published">275+ Downloads</span>
+              <span class="project-year">2024 – 2026</span>
+            </div>
+            <h3 class="project-name">Paatam — Indic Script Learning Platform</h3>
+            <p class="project-tagline">Stroke recognition and handwriting grading application</p>
+          </div>
+          <div class="project-body">
+            <ul class="project-bullets">
+              <li>Developed and launched a mobile application to teach character writing and script fundamentals for Indian languages, reaching 275+ organic downloads across iOS and Android.</li>
+              <li>Engineered stroke trace verification and canvas grading routines to provide real-time tactile feedback on character stroke sequences.</li>
+              <li>Migrated core engine from Dart/Flutter to native Swift &amp; SwiftUI to leverage low-latency Apple PencilKit stroke tracing.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span>Swift</span>
+              <span>SwiftUI</span>
+              <span>PencilKit</span>
+              <span>Flutter</span>
+              <span>Dart</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Leadership & Campus Roles -->
+    <section id="leadership" class="section-block">
+      <h2 class="section-title">Leadership & Governance</h2>
+      <div class="experience-list">
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role">Student Representative — Special Task Force on AI & Academic Affairs</h3>
+              <div class="exp-org">UNC Student Government & Office of the Chancellor / Vice Provost for AI</div>
+            </div>
+            <span class="exp-time">Aug 2026 – Present</span>
+          </div>
+          <p class="exp-desc">
+            Advise the Chancellor's Office, Provost, and Vice Provost for AI on university-wide artificial intelligence governance. Formulate student-centered policy recommendations addressing generative AI integration, pedagogical ethics, academic integrity standards, and equitable access to computational tools.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role">Founder & President</h3>
+              <div class="exp-org">Technospire (501(c)(3) CS Nonprofit Organization)</div>
+            </div>
+            <span class="exp-time">Mar 2024 – Jul 2025</span>
+          </div>
+          <p class="exp-desc">
+            Founded and led a regional computer science education nonprofit. Scaled the organization to a 12-member executive board, organized 3 regional hackathons engaging 130+ students, grew community newsletter to 192 subscribers, designed a Python curriculum taught to 30+ middle school students, and directed project teams that delivered 4 web platforms for local small businesses.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role">Treasurer & Publicity Lead</h3>
+              <div class="exp-org">UNC Sangam (South Asian Cultural Organization)</div>
+            </div>
+            <span class="exp-time">Fall 2025 – Present</span>
+          </div>
+          <p class="exp-desc">
+            Manage financial allocations, expense tracking, and budget management for one of UNC's largest cultural student organizations. Directed and produced a promotional media campaign for Mock Shaadi generating over 12,000 views and driving campus-wide event engagement.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Skills -->
+    <section id="education" class="section-block">
+      <h2 class="section-title">Education & Technical Skills</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>University of North Carolina at Chapel Hill</h3>
+          <p class="edu-degree">B.S. in Computer Science, Minor in Mathematics</p>
+          <p class="edu-sub">Expected Graduation: May 2028 • Rising Sophomore (Junior standing by credits)</p>
+          
+          <div class="coursework">
+            <strong>Key Coursework:</strong>
+            <div class="tags-inline">
+              <span>Data Structures (COMP 210)</span>
+              <span>Systems Fundamentals (COMP 211)</span>
+              <span>Foundations of Programming (COMP 301)</span>
+              <span>Linear Algebra (MATH 347)</span>
+              <span>Multivariable Calculus (MATH 233)</span>
+              <span>Discrete Mathematics (MATH 381)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-card">
+          <h3>Technical Competencies</h3>
+          <div class="skill-category">
+            <span class="skill-label">Languages:</span>
+            <span class="skill-values">Swift, C++, Python, Java, Dart, JavaScript, SQL, LaTeX, HTML/CSS</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-label">Apple & Systems:</span>
+            <span class="skill-values">SwiftUI, AppKit, Combine, App Intents, SwiftData, CoreLocation, MapKit, NSFilePresenter, Keychain API, XCTest</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-label">Quant & Analytics:</span>
+            <span class="skill-values">Pandas, NumPy, Streamlit, Plotly, yfinance, Volatility Modeling, Variance Swaps</span>
+          </div>
+          <div class="skill-category">
+            <span class="skill-label">Honors:</span>
+            <span class="skill-values">UKMT Maths Challenge (2x Gold Intermediate, Silver Senior), AP Scholar with Distinction, Duke of Edinburgh (Bronze & Silver)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section id="contact" class="section-block contact-block">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-desc">
+        Interested in collaborating on native software systems, open source numerics, or quantitative finance projects? Feel free to reach out directly.
+      </p>
+      <div class="contact-methods">
+        <a href="mailto:harsha.v.matta@gmail.com" class="btn btn-primary">Send Email</a>
+        <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="btn btn-outline">GitHub Profile</a>
+        <a href="https://linkedin.com/in/harshamatta" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">Download Resume (PDF)</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Harsha Matta. Built with plain HTML, CSS, and vanilla JS. Hosted on GitHub Pages.</p>
+      <p class="footer-note"><a href="#about">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
