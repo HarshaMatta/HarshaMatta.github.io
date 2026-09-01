@@ -690,3 +690,53 @@ body {
     text-align: center;
   }
 }
+
+/* App Icon & Screenshot previews inside project cards */
+.project-header-with-icon {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.project-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 0.5px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.project-meta-col {
+  flex: 1;
+}
+
+.card-media-strip {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.5rem;
+  scrollbar-width: thin;
+}
+
+.card-media-item {
+  flex: 0 0 95px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0.5px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease;
+}
+
+.card-media-item:hover {
+  transform: scale(1.04);
+}
+
+.card-media-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

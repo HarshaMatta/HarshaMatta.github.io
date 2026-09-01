@@ -152,15 +152,18 @@
           </div>
         </article>
 
-        <!-- Project 3: InOffice Tracker -->
+        <!-- Project 3: TrackInOffice -->
         <article class="project-card" data-category="systems">
-          <div class="project-header">
-            <div class="project-meta">
-              <span class="badge badge-published">App Store</span>
-              <span class="project-year">2026</span>
+          <div class="project-header-with-icon">
+            <img src="assets/trackinoffice/icon.jpg" alt="TrackInOffice App Icon" class="project-thumb">
+            <div class="project-meta-col">
+              <div class="project-meta">
+                <span class="badge badge-published">App Store</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3 class="project-name">TrackInOffice</h3>
+              <p class="project-tagline">Privacy-first hybrid work attendance tracker built for iOS</p>
             </div>
-            <h3 class="project-name">InOffice Tracker</h3>
-            <p class="project-tagline">Privacy-first hybrid work attendance tracker built for iOS</p>
           </div>
           <div class="project-body">
             <ul class="project-bullets">
@@ -169,6 +172,19 @@
               <li>Built a local SQLite persistence engine with SwiftData and an automated CSV exporter with formula-injection shielding (sanitizing <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>).</li>
               <li>Designed goal progress rings that dynamically scale required in-office targets based on remaining calendar working days.</li>
             </ul>
+
+            <!-- Screenshot previews -->
+            <div class="card-media-strip">
+              <div class="card-media-item">
+                <img src="assets/trackinoffice/screen1.jpg" alt="TrackInOffice Dashboard Screen" loading="lazy">
+              </div>
+              <div class="card-media-item">
+                <img src="assets/trackinoffice/screen2.jpg" alt="TrackInOffice Calendar Screen" loading="lazy">
+              </div>
+              <div class="card-media-item">
+                <img src="assets/trackinoffice/screen3.jpg" alt="TrackInOffice Settings Screen" loading="lazy">
+              </div>
+            </div>
           </div>
           <div class="project-footer">
             <div class="tech-tags">
@@ -180,6 +196,7 @@
               <span>Keychain API</span>
             </div>
             <div class="project-links">
+              <a href="https://apps.apple.com/us/app/trackinoffice/id6762209341" target="_blank" rel="noopener" class="link-btn">App Store ↗</a>
               <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
             </div>
           </div>
@@ -198,9 +215,9 @@
           <div class="project-body">
             <ul class="project-bullets">
               <li>Built an end-to-end 5-phase data ingestion and research pipeline in Python analyzing daily SPX and VIX price history from 2010 to present.</li>
-              <li>Aligned 30-day forward annualized realized volatility (RV = std(r_t, 30) × √252) against implied VIX, verifying that VRP is positive on &gt;85% of trading days.</li>
+              <li>Aligned 30-day forward annualized realized volatility ($RV_{fwd} = \text{std}(r_t, 30) \times \sqrt{252}$) against implied VIX, verifying that VRP is positive on &gt;85% of trading days.</li>
               <li>Partitioned market regimes (Bull, Crisis, Bear) and proved that VRP inverts during acute systemic crashes (e.g. March 2020 COVID shock, Feb 2018 Volmageddon).</li>
-              <li>Simulated monthly variance swap payoff models (PnL = w · [VIX² - RV²]) with inverse-volatility sizing, leverage ceilings, and VIX circuit breakers; deployed as an interactive Streamlit app.</li>
+              <li>Simulated monthly variance swap payoff models ($PnL = w \cdot [VIX^2 - RV^2]$) with inverse-volatility sizing, leverage ceilings, and VIX circuit breakers; deployed as an interactive Streamlit app.</li>
             </ul>
           </div>
           <div class="project-footer">
@@ -213,58 +230,48 @@
               <span>yfinance</span>
             </div>
             <div class="project-links">
-              <a href="https://medium.com/@harsha.v.matta" target="_blank" rel="noopener" class="link-btn">Article ↗</a>
-              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+              <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="link-btn">Medium Article ↗</a>
+              <a href="https://volatilityriskpremium.streamlit.app/" target="_blank" rel="noopener" class="link-btn">Streamlit App ↗</a>
+              <a href="https://github.com/HarshaMatta/VolatilityRiskPremium" target="_blank" rel="noopener" class="link-btn">GitHub Repo ↗</a>
             </div>
           </div>
         </article>
 
-        <!-- Project 5: Box Office Analytics -->
-        <article class="project-card" data-category="quant">
-          <div class="project-header">
-            <div class="project-meta">
-              <span class="badge badge-quant">Data Modeling</span>
-              <span class="project-year">2025 – 2026</span>
-            </div>
-            <h3 class="project-name">Indian Box Office Forecasting & Multiplier Modeling</h3>
-            <p class="project-tagline">Empirical entertainment analytics and regional penetration models</p>
-          </div>
-          <div class="project-body">
-            <ul class="project-bullets">
-              <li>Developed quantitative revenue forecasting models for Indian theatrical releases using historical comparable-film datasets.</li>
-              <li>Modeled weekend-to-lifetime multiplier decay trajectories, opening day occupancy coefficients, and distributor share realization across distinct regional theatrical territories (Telugu, Hindi, Tamil, Kannada, Malayalam).</li>
-              <li>Structured reproducible Excel forecasting engines and comprehensive PDF diagnostic research deliverables for commercial analysis.</li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span>Data Analysis</span>
-              <span>Financial Modeling</span>
-              <span>Multiplier Analytics</span>
-              <span>Excel/VBA</span>
-            </div>
-            <div class="project-links">
-              <span class="text-muted">Research Deliverables</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 6: Paatam -->
+        <!-- Project 5: Paatam -->
         <article class="project-card" data-category="systems">
-          <div class="project-header">
-            <div class="project-meta">
-              <span class="badge badge-published">275+ Downloads</span>
-              <span class="project-year">2024 – 2026</span>
+          <div class="project-header-with-icon">
+            <img src="assets/paatam/icon.jpg" alt="Paatam App Icon" class="project-thumb">
+            <div class="project-meta-col">
+              <div class="project-meta">
+                <span class="badge badge-published">275+ Downloads</span>
+                <span class="project-year">2024 – 2026</span>
+              </div>
+              <h3 class="project-name">Paatam — Indic Script Learning Platform</h3>
+              <p class="project-tagline">Stroke recognition and handwriting grading application</p>
             </div>
-            <h3 class="project-name">Paatam — Indic Script Learning Platform</h3>
-            <p class="project-tagline">Stroke recognition and handwriting grading application</p>
           </div>
           <div class="project-body">
             <ul class="project-bullets">
               <li>Developed and launched a mobile application to teach character writing and script fundamentals for Indian languages, reaching 275+ organic downloads across iOS and Android.</li>
               <li>Engineered stroke trace verification and canvas grading routines to provide real-time tactile feedback on character stroke sequences.</li>
-              <li>Migrated core engine from Dart/Flutter to native Swift &amp; SwiftUI to leverage low-latency Apple PencilKit stroke tracing.</li>
+              <li>Migrated core engine from Dart/Flutter to native Swift &amp; SwiftUI to leverage low-latency Apple PencilKit stroke tracing and spaced repetition algorithms.</li>
             </ul>
+
+            <!-- Screenshot previews -->
+            <div class="card-media-strip">
+              <div class="card-media-item">
+                <img src="assets/paatam/screen1.jpg" alt="Paatam Dashboard Screen" loading="lazy">
+              </div>
+              <div class="card-media-item">
+                <img src="assets/paatam/screen2.jpg" alt="Paatam Stroke Practice Screen" loading="lazy">
+              </div>
+              <div class="card-media-item">
+                <img src="assets/paatam/screen3.jpg" alt="Paatam Progress Rings Screen" loading="lazy">
+              </div>
+              <div class="card-media-item">
+                <img src="assets/paatam/screen4.jpg" alt="Paatam Character Detail Screen" loading="lazy">
+              </div>
+            </div>
           </div>
           <div class="project-footer">
             <div class="tech-tags">
@@ -275,6 +282,8 @@
               <span>Dart</span>
             </div>
             <div class="project-links">
+              <a href="paatam/" class="link-btn">Project Page ↗</a>
+              <a href="https://apps.apple.com/us/app/paatam/id6670503097" target="_blank" rel="noopener" class="link-btn">App Store ↗</a>
               <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
             </div>
           </div>
