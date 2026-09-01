@@ -1016,3 +1016,265 @@ code {
     align-items: flex-start;
   }
 }
+
+/* ==========================================================================
+   QUANTITATIVE RESEARCH SECTION
+   ========================================================================== */
+
+.quant-tools-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.quant-tool-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--badge-research-text);
+  border-radius: 0 14px 14px 0;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-left-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quant-tool-card:hover {
+  border-left-color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+}
+
+.quant-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.quant-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.quant-tool-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.quant-desc {
+  font-size: 0.945rem;
+  color: var(--text-secondary);
+  line-height: 1.62;
+  margin-bottom: 1rem;
+}
+
+/* Headline Stat Chips (VRP) */
+.stat-chips {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.1rem;
+}
+
+.stat-chip {
+  background: var(--badge-research-bg);
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  min-width: 88px;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--badge-research-text);
+  line-height: 1;
+  margin-bottom: 0.22rem;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Greeks Visualizer Display */
+.greek-display {
+  display: flex;
+  margin: 1rem 0 1.1rem;
+  background: var(--mockup-bg);
+  border: 1px solid var(--mockup-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.greek-sym {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem 0.5rem;
+  flex: 1;
+  border-right: 1px solid var(--mockup-border);
+  font-family: var(--font-mono);
+  transition: background 0.15s ease;
+  cursor: default;
+}
+
+.greek-sym:last-child { border-right: none; }
+.greek-sym:hover { background: var(--surface-hover); }
+
+.greek-letter {
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.greek-name {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* Link Strip (Medium / Streamlit / GitHub pills) */
+.link-strip {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.link-pill-medium { color: var(--text-secondary); }
+.link-pill-medium:hover {
+  background: rgba(168, 162, 158, 0.1);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.link-pill-streamlit { color: #ff4b4b; border-color: rgba(255, 75, 75, 0.25); }
+.link-pill-streamlit:hover {
+  background: rgba(255, 75, 75, 0.08);
+  border-color: #ff4b4b;
+}
+
+.link-pill-github { color: var(--text-secondary); }
+.link-pill-github:hover {
+  background: var(--surface-hover);
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+/* Technical Writing Strip */
+.writing-strip {
+  margin-top: 2.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.writing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.writing-strip-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.writing-stat {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--badge-research-text);
+  background: var(--badge-research-bg);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.writing-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.writing-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.15s ease;
+  color: inherit;
+}
+
+.writing-item:last-child { border-bottom: none; }
+.writing-item:hover { background: var(--surface-hover); }
+
+.writing-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--badge-research-text);
+  opacity: 0.7;
+  min-width: 22px;
+}
+
+.writing-text { flex: 1; }
+
+.writing-article-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.1rem;
+}
+
+.writing-article-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.writing-arrow {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+}
+
+.writing-item:hover .writing-arrow {
+  color: var(--accent-color);
+  transform: translateX(3px);
+}
+

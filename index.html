@@ -43,6 +43,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#quant">Quant</a>
         <a href="#leadership">Leadership</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -269,43 +270,6 @@
           </div>
         </article>
 
-        <!-- 4. QUANT RESEARCH: VRP Pipeline -->
-        <article class="tech-project-card">
-          <div class="card-title-row">
-            <div>
-              <span class="badge badge-research">Quantitative Research</span>
-              <h3 style="margin-top: 0.35rem;">Volatility Risk Premium (VRP) Study &amp; Pipeline</h3>
-            </div>
-            <div class="action-links">
-              <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="btn btn-outline">Medium Article ↗</a>
-              <a href="https://volatilityriskpremium.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary">Streamlit App ↗</a>
-              <a href="https://github.com/HarshaMatta/VolatilityRiskPremium" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
-            </div>
-          </div>
-
-          <p class="spotlight-pitch">
-            A self-contained empirical research pipeline in Python analyzing S&amp;P 500 (SPX) and VIX price history from 2010 to present to determine whether the options market systematically overprices forward fear.
-          </p>
-
-          <div class="formula-callout">VRP(t) = VIX_implied(t) − RealizedVol_30d_forward(t)</div>
-
-          <ul class="tech-highlights">
-            <li><strong>Forward Realized Volatility Alignment:</strong> Calculated 30-day forward annualized realized volatility (rolling std of daily returns × √252, shifted back 30 trading days), proving that VRP is positive on &gt;85% of trading days.</li>
-            <li><strong>Regime Segmentation:</strong> Segmented conditions into Bull (VIX &lt; 20 and SPX &gt; 200-day MA), Crisis (VIX ≥ 30), and Bear regimes. Proved VRP sharply inverts during acute systemic stress events (Mar 2020 COVID crash, Feb 2018 Volmageddon).</li>
-            <li><strong>Variance Swap Simulation:</strong> Modeled monthly variance swap payoffs (weight × [VIX² − RV²]) with volatility-inverse position sizing, leverage caps, and circuit breakers; deployed as an interactive Streamlit dashboard.</li>
-          </ul>
-
-          <div class="card-footer">
-            <div class="tech-tags">
-              <span>Python</span>
-              <span>Pandas</span>
-              <span>NumPy</span>
-              <span>Streamlit</span>
-              <span>Plotly</span>
-              <span>yfinance</span>
-            </div>
-          </div>
-        </article>
 
         <!-- 5. OPEN SOURCE HPC: deal.II -->
         <article class="tech-project-card">
@@ -341,6 +305,212 @@
         </article>
 
       </div>
+    </section>
+
+    <!-- ================================================================
+         QUANTITATIVE RESEARCH & WRITING
+         ================================================================ -->
+    <section id="quant" class="section-block">
+      <div class="section-header">
+        <h2 class="section-title">Quantitative Research &amp; Writing</h2>
+        <p class="section-subtitle">Three live interactive tools and four published articles on derivative pricing theory and volatility modeling.</p>
+      </div>
+
+      <div class="quant-tools-stack">
+
+        <!-- VRP: Flagship Quant Research -->
+        <article class="quant-tool-card">
+          <div class="quant-card-header">
+            <div class="quant-card-meta">
+              <span class="badge badge-research">Research Pipeline</span>
+              <span class="project-year">2024</span>
+            </div>
+            <div class="link-strip">
+              <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="link-pill link-pill-medium">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                Article
+              </a>
+              <a href="https://volatilityriskpremium.streamlit.app/" target="_blank" rel="noopener" class="link-pill link-pill-streamlit">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19h20L12 2z"/></svg>
+                Live App
+              </a>
+              <a href="https://github.com/HarshaMatta/VolatilityRiskPremium" target="_blank" rel="noopener" class="link-pill link-pill-github">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <h3>Volatility Risk Premium Study &amp; Pipeline</h3>
+          <p class="quant-desc">
+            A self-contained empirical research pipeline analyzing S&amp;P 500 and VIX price history from 2010 to present. Quantifies whether the options market systematically overprices forward realized volatility, and simulates the resulting variance swap carry strategy.
+          </p>
+
+          <div class="formula-callout">VRP(t) = VIX_implied(t) − RealizedVol_30d_forward(t)</div>
+
+          <div class="stat-chips">
+            <div class="stat-chip">
+              <div class="stat-value">&gt;85%</div>
+              <div class="stat-label">positive carry days</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-value">2010–now</div>
+              <div class="stat-label">SPX / VIX history</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-value">4</div>
+              <div class="stat-label">market regimes</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-value">3</div>
+              <div class="stat-label">crisis reversals</div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Streamlit</span>
+              <span>Plotly</span>
+              <span>yfinance</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Options Greeks Visualizer -->
+        <article class="quant-tool-card">
+          <div class="quant-card-header">
+            <div class="quant-card-meta">
+              <span class="badge badge-active">Interactive Tool</span>
+              <span class="project-year">Nov 2025</span>
+            </div>
+            <div class="link-strip">
+              <a href="https://greeksvisualizer.streamlit.app" target="_blank" rel="noopener" class="link-pill link-pill-streamlit">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19h20L12 2z"/></svg>
+                Live App
+              </a>
+            </div>
+          </div>
+
+          <h3>Options Greeks Visualizer</h3>
+          <p class="quant-desc">
+            Interactive dashboard modeling all five option sensitivities in real time across varying strike prices and maturities. Translates derivative pricing inputs into interpretable risk analytics for scenario-based assessment.
+          </p>
+
+          <!-- Greek Letters Display -->
+          <div class="greek-display">
+            <div class="greek-sym">
+              <span class="greek-letter" style="color: #58a6ff;">Δ</span>
+              <span class="greek-name">Delta</span>
+            </div>
+            <div class="greek-sym">
+              <span class="greek-letter" style="color: #a855f7;">Γ</span>
+              <span class="greek-name">Gamma</span>
+            </div>
+            <div class="greek-sym">
+              <span class="greek-letter" style="color: #f59e0b;">Θ</span>
+              <span class="greek-name">Theta</span>
+            </div>
+            <div class="greek-sym">
+              <span class="greek-letter" style="color: #10b981;">V</span>
+              <span class="greek-name">Vega</span>
+            </div>
+            <div class="greek-sym">
+              <span class="greek-letter" style="color: #f87171;">ρ</span>
+              <span class="greek-name">Rho</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Streamlit</span>
+              <span>Plotly</span>
+              <span>NumPy</span>
+              <span>SciPy</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Black-Scholes Option Profit Model -->
+        <article class="quant-tool-card">
+          <div class="quant-card-header">
+            <div class="quant-card-meta">
+              <span class="badge badge-active">Interactive Tool</span>
+              <span class="project-year">Feb – Mar 2025</span>
+            </div>
+            <div class="link-strip">
+              <a href="https://optionprofitmodel.streamlit.app" target="_blank" rel="noopener" class="link-pill link-pill-streamlit">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19h20L12 2z"/></svg>
+                Live App
+              </a>
+            </div>
+          </div>
+
+          <h3>Black–Scholes Option Profit Model</h3>
+          <p class="quant-desc">
+            Web-based computational tool implementing the Black–Scholes framework to calculate historical call option costs and simulate cumulative payoff structures over time. Features volatility sensitivity analysis and risk-neutral valuation scenarios.
+          </p>
+
+          <div class="formula-callout">Payoff = max(S_T − K, 0) − C_BS(S, K, σ, r, T)</div>
+
+          <div class="card-footer">
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Streamlit</span>
+              <span>Pandas</span>
+              <span>SciPy</span>
+              <span>Black–Scholes</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Technical Writing Strip -->
+      <div class="writing-strip">
+        <div class="writing-header">
+          <span class="writing-strip-title">Technical Writing — Medium</span>
+          <span class="writing-stat">3,400+ total impressions</span>
+        </div>
+        <div class="writing-list">
+          <a href="https://medium.com/@harsha.v.matta/how-do-you-price-an-option-5fbdbce99280" target="_blank" rel="noopener" class="writing-item">
+            <span class="writing-num">01</span>
+            <div class="writing-text">
+              <div class="writing-article-title">How do you price an option?</div>
+              <div class="writing-article-desc">Foundation of option valuation theory and pricing intuition</div>
+            </div>
+            <span class="writing-arrow">→</span>
+          </a>
+          <a href="https://medium.com/@harsha.v.matta/how-to-price-an-american-option-part-1-portfolio-approach-df14612ef694" target="_blank" rel="noopener" class="writing-item">
+            <span class="writing-num">02</span>
+            <div class="writing-text">
+              <div class="writing-article-title">American Options, Part 1: Portfolio Approach</div>
+              <div class="writing-article-desc">Replication portfolios, put–call parity, and early exercise</div>
+            </div>
+            <span class="writing-arrow">→</span>
+          </a>
+          <a href="https://medium.com/@harsha.v.matta/how-to-price-an-american-option-part-2-the-risk-neutral-approach-509ef168a3fe" target="_blank" rel="noopener" class="writing-item">
+            <span class="writing-num">03</span>
+            <div class="writing-text">
+              <div class="writing-article-title">American Options, Part 2: Risk-Neutral Approach</div>
+              <div class="writing-article-desc">Binomial trees, risk-neutral measure, and path dependency</div>
+            </div>
+            <span class="writing-arrow">→</span>
+          </a>
+          <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="writing-item">
+            <span class="writing-num">04</span>
+            <div class="writing-text">
+              <div class="writing-article-title">Volatility Risk Premium</div>
+              <div class="writing-article-desc">Empirical study of the systematic spread between implied and realized vol</div>
+            </div>
+            <span class="writing-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
     </section>
 
     <!-- Leadership & Governance -->
