@@ -287,14 +287,12 @@
             A self-contained empirical research pipeline in Python analyzing S&amp;P 500 (SPX) and VIX price history from 2010 to present to determine whether the options market systematically overprices forward fear.
           </p>
 
-          <div class="formula-callout">
-            $$\text{VRP}_t = \text{VIX}_{\text{dec}, t} - \text{RealizedVol}_{30\text{d forward}, t}$$
-          </div>
+          <div class="formula-callout">VRP(t) = VIX_implied(t) − RealizedVol_30d_forward(t)</div>
 
           <ul class="tech-highlights">
-            <li><strong>Forward Realized Volatility Alignment:</strong> Calculated 30-day forward annualized realized volatility ($RV = \text{rolling\_std}(r_t, 30) \times \sqrt{252}$ shifted backward by 30 trading days), proving that VRP is positive on &gt;85% of trading days.</li>
-            <li><strong>Regime Segmentation:</strong> Segmented market conditions into Bull ($VIX &lt; 20\% \land SPX &gt; 200d\text{ MA}$), Crisis ($VIX \ge 30\%$), and Bear. Proved that VRP sharply inverts during acute systemic panics (e.g. March 2020 COVID crash, Feb 2018 Volmageddon).</li>
-            <li><strong>Variance Swap Simulation:</strong> Simulated monthly variance swap payoff models ($PnL = w \cdot [VIX^2 - RV^2]$) with volatility-inverse sizing, leverage caps, and circuit breakers; deployed as an interactive Streamlit dashboard.</li>
+            <li><strong>Forward Realized Volatility Alignment:</strong> Calculated 30-day forward annualized realized volatility (rolling std of daily returns × √252, shifted back 30 trading days), proving that VRP is positive on &gt;85% of trading days.</li>
+            <li><strong>Regime Segmentation:</strong> Segmented conditions into Bull (VIX &lt; 20 and SPX &gt; 200-day MA), Crisis (VIX ≥ 30), and Bear regimes. Proved VRP sharply inverts during acute systemic stress events (Mar 2020 COVID crash, Feb 2018 Volmageddon).</li>
+            <li><strong>Variance Swap Simulation:</strong> Modeled monthly variance swap payoffs (weight × [VIX² − RV²]) with volatility-inverse position sizing, leverage caps, and circuit breakers; deployed as an interactive Streamlit dashboard.</li>
           </ul>
 
           <div class="card-footer">
