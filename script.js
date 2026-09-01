@@ -1,11 +1,11 @@
 /**
- * Harsha Matta — Personal Website Client Logic
- * Plain Vanilla JS (<2KB) — Instant execution, zero dependencies
+ * Harsha Matta — Personal Portfolio Client Logic
+ * Plain Vanilla JS (<2KB) — Ultra-fast, zero dependencies
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
-  initProjectFiltering();
+  initScreenshotLightbox();
 });
 
 /**
@@ -15,45 +15,45 @@ function initThemeToggle() {
   const toggleBtn = document.getElementById('theme-toggle');
   const root = document.documentElement;
 
-  // Retrieve saved preference or check OS preference
-  const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-  root.setAttribute('data-theme', currentTheme);
+  if (!toggleBtn) return;
 
   toggleBtn.addEventListener('click', () => {
-    const activeTheme = root.getAttribute('data-theme');
+    const activeTheme = root.getAttribute('data-theme') || 'dark';
     const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
     
     root.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+    try {
+      localStorage.setItem('theme', newTheme);
+    } catch (e) {}
   });
 }
 
 /**
- * Handles category filtering across project cards
+ * Lightweight lightbox to click and expand app screenshots
  */
-function initProjectFiltering() {
-  const chips = document.querySelectorAll('.filter-chip');
-  const cards = document.querySelectorAll('.project-card');
+function initScreenshotLightbox() {
+  const lightbox = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const frames = document.querySelectorAll('.device-frame-sm img, .screenshot-item img');
 
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      // Remove active class from all
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+  if (!lightbox || !lightboxImg || frames.length === 0) return;
 
-      const filter = chip.getAttribute('data-filter');
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+  frames.forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
     });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+    }
   });
 }

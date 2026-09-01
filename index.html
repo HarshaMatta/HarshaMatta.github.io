@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harsha Matta | Systems, Mobile & Quantitative Research</title>
   <meta name="description" content="Personal portfolio and resume of Harsha Matta. CS & Math at UNC Chapel Hill. Builder across Apple systems (Swift), scientific computing (C++ deal.II), and quantitative modeling.">
   <meta name="author" content="Harsha Matta">
+
+  <!-- Immediate Theme Initializer (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (systemDark ? 'dark' : 'light'));
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- OpenGraph / Social -->
   <meta property="og:type" content="website">
@@ -15,6 +26,12 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Web Fonts: Newsreader (Editorial Serif), Inter (Clean Sans), JetBrains Mono (Code/Tags) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -44,13 +61,16 @@
 
     <!-- Hero / Intro -->
     <section id="about" class="hero-section">
-      <div class="hero-badge">CS & Math @ UNC Chapel Hill</div>
+      <div class="hero-header-row">
+        <div class="hero-badge">CS &amp; Math @ UNC Chapel Hill</div>
+        <div class="hero-status"><span class="status-dot"></span> Targeting May 2028 Grad</div>
+      </div>
       <h1 class="hero-title">Building native systems, scientific computing tools, and quantitative models.</h1>
       <p class="hero-intro">
-        I am an undergraduate studying Computer Science and Mathematics at <strong>UNC Chapel Hill</strong> (targeting May 2028, junior standing by credits). Grew up in Madison, Alabama, spent 5 years in London at Sutton Grammar School, and now based in North Carolina.
+        Undergraduate studying Computer Science and Mathematics at <strong>UNC Chapel Hill</strong> (junior standing by credits). Grew up in Madison, Alabama, spent 5 years in London at Sutton Grammar School, and now based in North Carolina.
       </p>
       <p class="hero-sub">
-        My technical work spans local-first Apple ecosystem tools (Swift/SwiftUI), numerical methods in high-performance C++ (contributor to <code>deal.II</code>), and empirical derivative / volatility research (Python).
+        I focus on local-first Apple platforms (Swift/SwiftUI), numerical methods in high-performance C++ (contributor to <code>deal.II</code>), and empirical volatility &amp; derivatives research (Python).
       </p>
 
       <div class="social-pills">
@@ -68,7 +88,7 @@
         </a>
         <a href="https://medium.com/@harsha.v.matta" target="_blank" rel="noopener" class="pill-link">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-          Medium Writing
+          Medium
         </a>
       </div>
     </section>
@@ -76,35 +96,64 @@
     <!-- Projects Section -->
     <section id="projects" class="section-block">
       <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="filter-group" role="tablist">
-          <button class="filter-chip active" data-filter="all">All</button>
-          <button class="filter-chip" data-filter="systems">Systems & Mobile</button>
-          <button class="filter-chip" data-filter="quant">Quant & Analytics</button>
-        </div>
+        <h2 class="section-title">Selected Projects &amp; Research</h2>
+        <p class="section-subtitle">Local-first native software, open source numerical libraries, and quantitative finance pipelines.</p>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-stack">
 
-        <!-- Project 1: Next -->
-        <article class="project-card" data-category="systems">
-          <div class="project-header">
-            <div class="project-meta">
-              <span class="badge badge-active">In Progress</span>
-              <span class="project-year">2026</span>
+        <!-- 1. FLAGSHIP SPOTLIGHT: NEXT -->
+        <article class="spotlight-card">
+          <div class="spotlight-header">
+            <div>
+              <span class="badge badge-active">Flagship • In Progress</span>
+              <h3 class="spotlight-name" style="margin-top: 0.35rem;">Next — The Unified Markdown Workspace</h3>
             </div>
-            <h3 class="project-name">Next — Unified Markdown Workspace</h3>
-            <p class="project-tagline">Local-first productivity suite for iOS, iPadOS, macOS, and visionOS</p>
+            <div class="action-links">
+              <a href="https://harshamatta.github.io/projNext/" target="_blank" rel="noopener" class="btn btn-primary">Project Site ↗</a>
+              <a href="https://github.com/HarshaMatta/projNext" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
+            </div>
           </div>
-          <div class="project-body">
-            <ul class="project-bullets">
-              <li>Engineered a local-first plain-text Markdown (<code>.md</code>) storage engine with real-time iCloud Drive sync via <code>NSFilePresenter</code>, eliminating proprietary database lock-in.</li>
-              <li>Implemented line-level string-hash verification to prevent multi-device write collisions without overwriting surrounding user notes.</li>
-              <li>Built a custom 24-hour tactile timeline canvas featuring drag-and-drop task staging, edge-stretching duration adjustments, and automated midnight rollover tracking.</li>
-              <li>Integrated dual AI architecture: on-device Apple Intelligence Foundation Models and user-supplied API keys (OpenAI / Anthropic) to parse natural language schedules locally.</li>
-            </ul>
+
+          <p class="spotlight-pitch">
+            A native, local-first productivity workspace for iOS, iPadOS, macOS, and visionOS. Next treats plain-text Markdown vaults as a relational storage layer, directly linking long-term notes to a 24-hour interactive calendar timeline canvas without database lock-in.
+          </p>
+
+          <!-- Dual-Pane Visual Architecture Mockup -->
+          <div class="next-mockup-container">
+            <div class="mockup-pane">
+              <div class="pane-label">Vault: University_Physics.tasks.md</div>
+              <div class="code-line">- [x] Complete Problem Set 4 <span class="code-tag">[status: done]</span></div>
+              <div class="code-line">- [ ] Review compliance deck <span class="code-time">[time: 10:00-11:30]</span></div>
+              <div class="code-line">- [ ] Draft FEM affine proof <span class="code-time">[time: 14:00-15:30]</span> <span class="code-tag">[status: scheduled]</span></div>
+            </div>
+            <div class="mockup-pane">
+              <div class="pane-label">24-Hour Tactile Canvas</div>
+              <div class="timeline-visual">
+                <div class="timeline-slot">10:00 AM</div>
+                <div class="timeline-block">Review compliance deck (90m)</div>
+                <div class="timeline-slot">02:00 PM</div>
+                <div class="timeline-block" style="background: rgba(168, 85, 247, 0.15); border-left-color: #a855f7;">Draft FEM affine proof (90m)</div>
+              </div>
+            </div>
           </div>
-          <div class="project-footer">
+
+          <div class="feature-pillars">
+            <div class="pillar-item">
+              <div class="pillar-title">📂 Zero Database Lock-In</div>
+              <div class="pillar-desc">Stores all data in plain <code>.md</code> pairs synced via <code>NSFilePresenter</code>. Employs line-level string-hash checks to eliminate cloud sync collisions safely.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-title">⏱️ Tactile 24h Timeline</div>
+              <div class="pillar-desc">Custom interactive scheduling canvas supporting drag-and-drop task placement, edge-stretching duration adjustment, and automated midnight rollover velocity.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-title">🧠 Dual AI Architecture</div>
+              <div class="pillar-desc">Integrates on-device Apple Intelligence Foundation Models alongside Bring-Your-Own-Key external LLMs to parse natural language schedules completely offline.</div>
+            </div>
+          </div>
+
+          <div class="card-footer">
             <div class="tech-tags">
               <span>Swift</span>
               <span>SwiftUI</span>
@@ -112,81 +161,46 @@
               <span>Combine</span>
               <span>App Intents</span>
               <span>NSFilePresenter</span>
-            </div>
-            <div class="project-links">
-              <a href="https://harshamatta.github.io/projNext/" target="_blank" rel="noopener" class="link-btn">Site ↗</a>
-              <a href="https://github.com/HarshaMatta/projNext" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+              <span>XCTest</span>
             </div>
           </div>
         </article>
 
-        <!-- Project 2: deal.II -->
-        <article class="project-card" data-category="systems">
-          <div class="project-header">
-            <div class="project-meta">
-              <span class="badge badge-os">Open Source</span>
-              <span class="project-year">2026</span>
-            </div>
-            <h3 class="project-name">deal.II — C++ Scientific Computing Library</h3>
-            <p class="project-tagline">Numerical methods & finite element infrastructure contributor</p>
-          </div>
-          <div class="project-body">
-            <ul class="project-bullets">
-              <li>Authored and merged upstream pull requests in a large-scale C++ finite element library used for high-performance numerical simulations.</li>
-              <li>Diagnosed and patched numerical inaccuracies in Real-to-Unit Affine coordinate mapping for distorted non-hypercube mesh cells.</li>
-              <li>Decoupled coordinate transformation routines to boost calculation throughput across high-dimensional simulation bounds.</li>
-              <li>Ongoing work extending affine approximation routines to simplex and mixed-element mesh topologies.</li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span>C++</span>
-              <span>Numerical Analysis</span>
-              <span>Finite Elements</span>
-              <span>HPC</span>
-              <span>Git</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/dealii/dealii" target="_blank" rel="noopener" class="link-btn">dealii/dealii ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3: TrackInOffice -->
-        <article class="project-card" data-category="systems">
-          <div class="project-header-with-icon">
-            <img src="assets/trackinoffice/icon.jpg" alt="TrackInOffice App Icon" class="project-thumb">
-            <div class="project-meta-col">
+        <!-- 2. SHIPPED APP: TrackInOffice -->
+        <article class="app-showcase-card">
+          <div class="app-header-row">
+            <img src="assets/trackinoffice/icon.jpg" alt="TrackInOffice App Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async">
+            <div class="app-identity">
               <div class="project-meta">
-                <span class="badge badge-published">App Store</span>
-                <span class="project-year">2026</span>
+                <span class="badge badge-published">App Store • 5.0 ★</span>
+                <span class="project-year">Published 2026</span>
               </div>
-              <h3 class="project-name">TrackInOffice</h3>
-              <p class="project-tagline">Privacy-first hybrid work attendance tracker built for iOS</p>
+              <h3>TrackInOffice</h3>
+              <p class="app-hook">Privacy-first hybrid work attendance tracker using OS-level geofencing</p>
             </div>
           </div>
-          <div class="project-body">
-            <ul class="project-bullets">
-              <li>Engineered a zero-telemetry attendance tracker using hardware-level geofencing (<code>CLCircularRegion</code>) with zero background battery drain and 30-minute notification throttling.</li>
-              <li>Protected workplace GPS coordinates using native iOS Keychain (<code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>), enabling secure background reads while the device is locked.</li>
-              <li>Built a local SQLite persistence engine with SwiftData and an automated CSV exporter with formula-injection shielding (sanitizing <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>).</li>
-              <li>Designed goal progress rings that dynamically scale required in-office targets based on remaining calendar working days.</li>
-            </ul>
 
-            <!-- Screenshot previews -->
-            <div class="card-media-strip">
-              <div class="card-media-item">
-                <img src="assets/trackinoffice/screen1.jpg" alt="TrackInOffice Dashboard Screen" loading="lazy">
-              </div>
-              <div class="card-media-item">
-                <img src="assets/trackinoffice/screen2.jpg" alt="TrackInOffice Calendar Screen" loading="lazy">
-              </div>
-              <div class="card-media-item">
-                <img src="assets/trackinoffice/screen3.jpg" alt="TrackInOffice Settings Screen" loading="lazy">
-              </div>
+          <!-- Interactive Screenshot Preview Strip -->
+          <div class="app-gallery-scroll">
+            <div class="device-frame-sm">
+              <img src="assets/trackinoffice/screen1.jpg" alt="TrackInOffice Dashboard" width="170" height="340" loading="lazy" decoding="async">
+            </div>
+            <div class="device-frame-sm">
+              <img src="assets/trackinoffice/screen2.jpg" alt="TrackInOffice Calendar Log" width="170" height="340" loading="lazy" decoding="async">
+            </div>
+            <div class="device-frame-sm">
+              <img src="assets/trackinoffice/screen3.jpg" alt="TrackInOffice Workplace Settings" width="170" height="340" loading="lazy" decoding="async">
             </div>
           </div>
-          <div class="project-footer">
+          <div class="gallery-caption">Tap any screenshot to enlarge</div>
+
+          <ul class="tech-highlights">
+            <li><strong>Hardware-Level Geofencing:</strong> Uses CoreLocation <code>CLCircularRegion</code> to automatically log office arrivals in the background with zero battery drain and 30-minute notification throttling.</li>
+            <li><strong>Keychain Security Model:</strong> Stores sensitive office coordinates inside the iOS Keychain using <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code>, enabling secure reads while the device is locked in a pocket.</li>
+            <li><strong>Dynamic Goals &amp; Sanitized CSV:</strong> Progress rings dynamically scale required attendance based on remaining working days; built-in CSV export features formula-injection shielding (escaping <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>).</li>
+          </ul>
+
+          <div class="card-footer">
             <div class="tech-tags">
               <span>Swift</span>
               <span>SwiftUI</span>
@@ -195,32 +209,95 @@
               <span>MapKit</span>
               <span>Keychain API</span>
             </div>
-            <div class="project-links">
-              <a href="https://apps.apple.com/us/app/trackinoffice/id6762209341" target="_blank" rel="noopener" class="link-btn">App Store ↗</a>
-              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+            <div class="action-links">
+              <a href="https://apps.apple.com/us/app/trackinoffice/id6762209341" target="_blank" rel="noopener" class="btn btn-primary">App Store ↗</a>
+              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
             </div>
           </div>
         </article>
 
-        <!-- Project 4: VRP Research -->
-        <article class="project-card" data-category="quant">
-          <div class="project-header">
-            <div class="project-meta">
-              <span class="badge badge-research">Research</span>
-              <span class="project-year">2026</span>
+        <!-- 3. SHIPPED APP: Paatam -->
+        <article class="app-showcase-card">
+          <div class="app-header-row">
+            <img src="assets/paatam/icon.jpg" alt="Paatam App Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async">
+            <div class="app-identity">
+              <div class="project-meta">
+                <span class="badge badge-published">App Store • 275+ Downloads</span>
+                <span class="project-year">2024 – 2026</span>
+              </div>
+              <h3>Paatam — Indic Script Learning Platform</h3>
+              <p class="app-hook">Interactive handwriting and character recognition companion for Indian languages</p>
             </div>
-            <h3 class="project-name">Volatility Risk Premium (VRP) Study & Pipeline</h3>
-            <p class="project-tagline">Quantitative options pricing pipeline & interactive strategy simulation</p>
           </div>
-          <div class="project-body">
-            <ul class="project-bullets">
-              <li>Built an end-to-end 5-phase data ingestion and research pipeline in Python analyzing daily SPX and VIX price history from 2010 to present.</li>
-              <li>Aligned 30-day forward annualized realized volatility ($RV_{fwd} = \text{std}(r_t, 30) \times \sqrt{252}$) against implied VIX, verifying that VRP is positive on &gt;85% of trading days.</li>
-              <li>Partitioned market regimes (Bull, Crisis, Bear) and proved that VRP inverts during acute systemic crashes (e.g. March 2020 COVID shock, Feb 2018 Volmageddon).</li>
-              <li>Simulated monthly variance swap payoff models ($PnL = w \cdot [VIX^2 - RV^2]$) with inverse-volatility sizing, leverage ceilings, and VIX circuit breakers; deployed as an interactive Streamlit app.</li>
-            </ul>
+
+          <!-- Interactive Screenshot Preview Strip -->
+          <div class="app-gallery-scroll">
+            <div class="device-frame-sm">
+              <img src="assets/paatam/screen1.jpg" alt="Paatam Main Dashboard" width="170" height="340" loading="lazy" decoding="async">
+            </div>
+            <div class="device-frame-sm">
+              <img src="assets/paatam/screen2.jpg" alt="Paatam Stroke Practice" width="170" height="340" loading="lazy" decoding="async">
+            </div>
+            <div class="device-frame-sm">
+              <img src="assets/paatam/screen3.jpg" alt="Paatam Mastery Rings" width="170" height="340" loading="lazy" decoding="async">
+            </div>
+            <div class="device-frame-sm">
+              <img src="assets/paatam/screen4.jpg" alt="Paatam Script Details" width="170" height="340" loading="lazy" decoding="async">
+            </div>
           </div>
-          <div class="project-footer">
+          <div class="gallery-caption">Tap any screenshot to enlarge</div>
+
+          <ul class="tech-highlights">
+            <li><strong>Smart Spaced Repetition:</strong> Employs algorithmic memory scheduling to test characters at the precise point of predicted memory decay, ensuring long-term script retention across Telugu, Hindi, Tamil, Kannada, and Malayalam.</li>
+            <li><strong>Real-Time Stroke Grading:</strong> Programmed low-latency Apple PencilKit gesture heuristics to evaluate stroke direction, sequential ordering, and character geometry with tactile haptics.</li>
+            <li><strong>Native Migration:</strong> Re-architected from an initial Flutter prototype into native Swift &amp; SwiftUI for maximum canvas responsiveness and zero-telemetry offline storage.</li>
+          </ul>
+
+          <div class="card-footer">
+            <div class="tech-tags">
+              <span>Swift</span>
+              <span>SwiftUI</span>
+              <span>PencilKit</span>
+              <span>Spaced Repetition</span>
+              <span>Flutter</span>
+            </div>
+            <div class="action-links">
+              <a href="paatam/" class="btn btn-outline">Subpage ↗</a>
+              <a href="https://apps.apple.com/us/app/paatam/id6670503097" target="_blank" rel="noopener" class="btn btn-primary">App Store ↗</a>
+              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. QUANT RESEARCH: VRP Pipeline -->
+        <article class="tech-project-card">
+          <div class="card-title-row">
+            <div>
+              <span class="badge badge-research">Quantitative Research</span>
+              <h3 style="margin-top: 0.35rem;">Volatility Risk Premium (VRP) Study &amp; Pipeline</h3>
+            </div>
+            <div class="action-links">
+              <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="btn btn-outline">Medium Article ↗</a>
+              <a href="https://volatilityriskpremium.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary">Streamlit App ↗</a>
+              <a href="https://github.com/HarshaMatta/VolatilityRiskPremium" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
+            </div>
+          </div>
+
+          <p class="spotlight-pitch">
+            A self-contained empirical research pipeline in Python analyzing S&amp;P 500 (SPX) and VIX price history from 2010 to present to determine whether the options market systematically overprices forward fear.
+          </p>
+
+          <div class="formula-callout">
+            $$\text{VRP}_t = \text{VIX}_{\text{dec}, t} - \text{RealizedVol}_{30\text{d forward}, t}$$
+          </div>
+
+          <ul class="tech-highlights">
+            <li><strong>Forward Realized Volatility Alignment:</strong> Calculated 30-day forward annualized realized volatility ($RV = \text{rolling\_std}(r_t, 30) \times \sqrt{252}$ shifted backward by 30 trading days), proving that VRP is positive on &gt;85% of trading days.</li>
+            <li><strong>Regime Segmentation:</strong> Segmented market conditions into Bull ($VIX &lt; 20\% \land SPX &gt; 200d\text{ MA}$), Crisis ($VIX \ge 30\%$), and Bear. Proved that VRP sharply inverts during acute systemic panics (e.g. March 2020 COVID crash, Feb 2018 Volmageddon).</li>
+            <li><strong>Variance Swap Simulation:</strong> Simulated monthly variance swap payoff models ($PnL = w \cdot [VIX^2 - RV^2]$) with volatility-inverse sizing, leverage caps, and circuit breakers; deployed as an interactive Streamlit dashboard.</li>
+          </ul>
+
+          <div class="card-footer">
             <div class="tech-tags">
               <span>Python</span>
               <span>Pandas</span>
@@ -229,62 +306,38 @@
               <span>Plotly</span>
               <span>yfinance</span>
             </div>
-            <div class="project-links">
-              <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="link-btn">Medium Article ↗</a>
-              <a href="https://volatilityriskpremium.streamlit.app/" target="_blank" rel="noopener" class="link-btn">Streamlit App ↗</a>
-              <a href="https://github.com/HarshaMatta/VolatilityRiskPremium" target="_blank" rel="noopener" class="link-btn">GitHub Repo ↗</a>
-            </div>
           </div>
         </article>
 
-        <!-- Project 5: Paatam -->
-        <article class="project-card" data-category="systems">
-          <div class="project-header-with-icon">
-            <img src="assets/paatam/icon.jpg" alt="Paatam App Icon" class="project-thumb">
-            <div class="project-meta-col">
-              <div class="project-meta">
-                <span class="badge badge-published">275+ Downloads</span>
-                <span class="project-year">2024 – 2026</span>
-              </div>
-              <h3 class="project-name">Paatam — Indic Script Learning Platform</h3>
-              <p class="project-tagline">Stroke recognition and handwriting grading application</p>
+        <!-- 5. OPEN SOURCE HPC: deal.II -->
+        <article class="tech-project-card">
+          <div class="card-title-row">
+            <div>
+              <span class="badge badge-os">Open Source C++</span>
+              <h3 style="margin-top: 0.35rem;">deal.II — Scientific Computing Library</h3>
+            </div>
+            <div class="action-links">
+              <a href="https://github.com/dealii/dealii" target="_blank" rel="noopener" class="btn btn-outline">dealii/dealii ↗</a>
             </div>
           </div>
-          <div class="project-body">
-            <ul class="project-bullets">
-              <li>Developed and launched a mobile application to teach character writing and script fundamentals for Indian languages, reaching 275+ organic downloads across iOS and Android.</li>
-              <li>Engineered stroke trace verification and canvas grading routines to provide real-time tactile feedback on character stroke sequences.</li>
-              <li>Migrated core engine from Dart/Flutter to native Swift &amp; SwiftUI to leverage low-latency Apple PencilKit stroke tracing and spaced repetition algorithms.</li>
-            </ul>
 
-            <!-- Screenshot previews -->
-            <div class="card-media-strip">
-              <div class="card-media-item">
-                <img src="assets/paatam/screen1.jpg" alt="Paatam Dashboard Screen" loading="lazy">
-              </div>
-              <div class="card-media-item">
-                <img src="assets/paatam/screen2.jpg" alt="Paatam Stroke Practice Screen" loading="lazy">
-              </div>
-              <div class="card-media-item">
-                <img src="assets/paatam/screen3.jpg" alt="Paatam Progress Rings Screen" loading="lazy">
-              </div>
-              <div class="card-media-item">
-                <img src="assets/paatam/screen4.jpg" alt="Paatam Character Detail Screen" loading="lazy">
-              </div>
-            </div>
-          </div>
-          <div class="project-footer">
+          <p class="spotlight-pitch">
+            Contributed performance optimizations and numerical coordinate mapping infrastructure to a large-scale C++ scientific computing library used in high-performance finite element simulations.
+          </p>
+
+          <ul class="tech-highlights">
+            <li><strong>Real-to-Unit Affine Coordinate Mapping:</strong> Diagnosed and resolved numerical inaccuracies in coordinate conversion algorithms on non-hypercube and distorted mesh cell geometries.</li>
+            <li><strong>Decoupled Numerical Solvers:</strong> Isolated coordinate transformation routines to maintain matrix calculation stability and optimize throughput in multi-threaded simulation boundaries.</li>
+            <li><strong>Simplex Topologies:</strong> Ongoing development extending affine approximation routines to simplex and mixed-element meshes in modern FEM solver suites.</li>
+          </ul>
+
+          <div class="card-footer">
             <div class="tech-tags">
-              <span>Swift</span>
-              <span>SwiftUI</span>
-              <span>PencilKit</span>
-              <span>Flutter</span>
-              <span>Dart</span>
-            </div>
-            <div class="project-links">
-              <a href="paatam/" class="link-btn">Project Page ↗</a>
-              <a href="https://apps.apple.com/us/app/paatam/id6670503097" target="_blank" rel="noopener" class="link-btn">App Store ↗</a>
-              <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="link-btn">GitHub ↗</a>
+              <span>C++</span>
+              <span>Finite Element Methods</span>
+              <span>Numerical Analysis</span>
+              <span>HPC</span>
+              <span>Git / Upstream PRs</span>
             </div>
           </div>
         </article>
@@ -292,16 +345,20 @@
       </div>
     </section>
 
-    <!-- Leadership & Campus Roles -->
+    <!-- Leadership & Governance -->
     <section id="leadership" class="section-block">
-      <h2 class="section-title">Leadership & Governance</h2>
+      <div class="section-header">
+        <h2 class="section-title">Leadership &amp; Governance</h2>
+        <p class="section-subtitle">University policy advisory, non-profit founding, and community finance management.</p>
+      </div>
+
       <div class="experience-list">
 
         <div class="exp-item">
           <div class="exp-header">
             <div>
-              <h3 class="exp-role">Student Representative — Special Task Force on AI & Academic Affairs</h3>
-              <div class="exp-org">UNC Student Government & Office of the Chancellor / Vice Provost for AI</div>
+              <h3 class="exp-role">Student Representative — Special Task Force on AI &amp; Academic Affairs</h3>
+              <div class="exp-org">UNC Student Government &amp; Office of the Chancellor / Vice Provost for AI</div>
             </div>
             <span class="exp-time">Aug 2026 – Present</span>
           </div>
@@ -313,7 +370,7 @@
         <div class="exp-item">
           <div class="exp-header">
             <div>
-              <h3 class="exp-role">Founder & President</h3>
+              <h3 class="exp-role">Founder &amp; President</h3>
               <div class="exp-org">Technospire (501(c)(3) CS Nonprofit Organization)</div>
             </div>
             <span class="exp-time">Mar 2024 – Jul 2025</span>
@@ -326,7 +383,7 @@
         <div class="exp-item">
           <div class="exp-header">
             <div>
-              <h3 class="exp-role">Treasurer & Publicity Lead</h3>
+              <h3 class="exp-role">Treasurer &amp; Publicity Lead</h3>
               <div class="exp-org">UNC Sangam (South Asian Cultural Organization)</div>
             </div>
             <span class="exp-time">Fall 2025 – Present</span>
@@ -339,14 +396,19 @@
       </div>
     </section>
 
-    <!-- Education & Skills -->
+    <!-- Education & Skills (Desktop 2-Column Grid) -->
     <section id="education" class="section-block">
-      <h2 class="section-title">Education & Technical Skills</h2>
+      <div class="section-header">
+        <h2 class="section-title">Education &amp; Competencies</h2>
+      </div>
+
       <div class="edu-grid">
         <div class="edu-card">
-          <h3>University of North Carolina at Chapel Hill</h3>
-          <p class="edu-degree">B.S. in Computer Science, Minor in Mathematics</p>
-          <p class="edu-sub">Expected Graduation: May 2028 • Rising Sophomore (Junior standing by credits)</p>
+          <div>
+            <h3>University of North Carolina at Chapel Hill</h3>
+            <p class="edu-degree">B.S. in Computer Science, Minor in Mathematics</p>
+            <p class="edu-sub">Expected May 2028 • Rising Sophomore (Junior standing by credits)</p>
+          </div>
           
           <div class="coursework">
             <strong>Key Coursework:</strong>
@@ -362,22 +424,24 @@
         </div>
 
         <div class="skills-card">
-          <h3>Technical Competencies</h3>
-          <div class="skill-category">
-            <span class="skill-label">Languages:</span>
-            <span class="skill-values">Swift, C++, Python, Java, Dart, JavaScript, SQL, LaTeX, HTML/CSS</span>
-          </div>
-          <div class="skill-category">
-            <span class="skill-label">Apple & Systems:</span>
-            <span class="skill-values">SwiftUI, AppKit, Combine, App Intents, SwiftData, CoreLocation, MapKit, NSFilePresenter, Keychain API, XCTest</span>
-          </div>
-          <div class="skill-category">
-            <span class="skill-label">Quant & Analytics:</span>
-            <span class="skill-values">Pandas, NumPy, Streamlit, Plotly, yfinance, Volatility Modeling, Variance Swaps</span>
-          </div>
-          <div class="skill-category">
-            <span class="skill-label">Honors:</span>
-            <span class="skill-values">UKMT Maths Challenge (2x Gold Intermediate, Silver Senior), AP Scholar with Distinction, Duke of Edinburgh (Bronze & Silver)</span>
+          <h3>Technical Inventory</h3>
+          <div>
+            <div class="skill-category">
+              <span class="skill-label">Languages:</span>
+              <span class="skill-values">Swift, C++, Python, Java, Dart, JavaScript, SQL, LaTeX, HTML/CSS</span>
+            </div>
+            <div class="skill-category">
+              <span class="skill-label">Apple &amp; Systems:</span>
+              <span class="skill-values">SwiftUI, AppKit, Combine, App Intents, SwiftData, CoreLocation, MapKit, NSFilePresenter, Keychain API, XCTest</span>
+            </div>
+            <div class="skill-category">
+              <span class="skill-label">Quant &amp; Analytics:</span>
+              <span class="skill-values">Pandas, NumPy, Streamlit, Plotly, yfinance, Volatility Modeling, Variance Swaps</span>
+            </div>
+            <div class="skill-category">
+              <span class="skill-label">Honors:</span>
+              <span class="skill-values">UKMT Maths Challenge (2x Gold Intermediate, Silver Senior), AP Scholar with Distinction, Duke of Edinburgh (Bronze &amp; Silver)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -387,7 +451,7 @@
     <section id="contact" class="section-block contact-block">
       <h2 class="section-title">Get In Touch</h2>
       <p class="contact-desc">
-        Interested in collaborating on native software systems, open source numerics, or quantitative finance projects? Feel free to reach out directly.
+        Interested in collaborating on native software systems, open source scientific computing, or quantitative research? Feel free to reach out directly.
       </p>
       <div class="contact-methods">
         <a href="mailto:harsha.v.matta@gmail.com" class="btn btn-primary">Send Email</a>
@@ -405,6 +469,11 @@
       <p class="footer-note"><a href="#about">Back to top ↑</a></p>
     </div>
   </footer>
+
+  <!-- Lightbox Modal for Fullscreen Screenshot Previews -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Screenshot Enlarge">
+  </div>
 
   <script src="script.js"></script>
 </body>

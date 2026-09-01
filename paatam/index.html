@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paatam — Master Indian Scripts with Confidence</title>
-  <meta name="description" content="Learn, practice, and master Indian language scripts (Telugu, Hindi, Tamil, Kannada, Malayalam) with interactive stroke tracing and spaced repetition.">
+  <meta name="description" content="Learn, practice, and master Indian language scripts (Telugu, Hindi, Tamil, Kannada, Malayalam) with interactive stroke tracing and spaced repetition on iOS.">
   <meta property="og:title" content="Paatam — Master Indian Scripts with Confidence">
   <meta property="og:description" content="Interactive stroke tracing and handwriting practice for Indian languages on iOS.">
   <meta property="og:image" content="../assets/paatam/icon.jpg">
   <link rel="icon" type="image/jpeg" href="../assets/paatam/icon.jpg">
+
+  <!-- Immediate Theme Initializer -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (systemDark ? 'dark' : 'light'));
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../styles.css">
   <style>
     .product-hero {
       text-align: center;
-      padding: 4rem 0 3rem;
-      border-bottom: 0.5px solid var(--border-color);
+      padding: 4.5rem 0 3rem;
+      border-bottom: 1px solid var(--border-color);
     }
     .app-icon-lg {
       width: 108px;
@@ -22,7 +39,7 @@
       border-radius: 24px;
       box-shadow: var(--shadow-md);
       margin-bottom: 1.5rem;
-      border: 0.5px solid var(--border-color);
+      border: 1px solid var(--border-color);
     }
     .hero-buttons {
       display: flex;
@@ -40,17 +57,19 @@
       scrollbar-width: thin;
     }
     .screenshot-item {
-      flex: 0 0 220px;
+      flex: 0 0 200px;
       scroll-snap-align: start;
-      border-radius: 18px;
+      border-radius: 16px;
       overflow: hidden;
-      border: 0.5px solid var(--border-color);
+      border: 1px solid var(--border-color);
       box-shadow: var(--shadow-sm);
-      background: var(--surface-color);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: var(--surface-raised);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
     .screenshot-item:hover {
       transform: translateY(-4px);
+      border-color: var(--accent-color);
       box-shadow: var(--shadow-md);
     }
     .screenshot-item img {
@@ -66,13 +85,13 @@
     }
     .feature-box {
       background: var(--surface-color);
-      border: 0.5px solid var(--border-color);
+      border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 1.25rem;
     }
     .feature-box h4 {
       font-family: var(--font-serif);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-bottom: 0.4rem;
       color: var(--text-primary);
     }
@@ -80,22 +99,6 @@
       font-size: 0.88rem;
       color: var(--text-secondary);
       line-height: 1.55;
-    }
-    .appstore-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--text-primary);
-      color: var(--bg-color);
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: opacity 0.15s ease;
-    }
-    .appstore-badge:hover {
-      opacity: 0.9;
     }
   </style>
 </head>
@@ -118,37 +121,41 @@
 
     <!-- Hero -->
     <section class="product-hero">
-      <img src="../assets/paatam/icon.jpg" alt="Paatam App Icon" class="app-icon-lg">
-      <div class="hero-badge">iOS App • Language Learning</div>
-      <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 0.8rem;">Master Indian Scripts with Confidence.</h1>
+      <img src="../assets/paatam/icon.jpg" alt="Paatam App Icon" class="app-icon-lg" width="108" height="108" loading="lazy" decoding="async">
+      <div>
+        <span class="badge badge-published">iOS App • 275+ Organic Downloads</span>
+      </div>
+      <h1 class="hero-title" style="font-size: 2.6rem; margin-top: 0.8rem; margin-bottom: 0.8rem;">Master Indian Scripts with Confidence.</h1>
       <p class="hero-intro" style="max-width: 620px; margin: 0 auto 1.5rem;">
         Paatam is an intelligent handwriting and character recognition companion for reading and writing Indian language scripts—featuring smart spaced repetition and Apple Pencil stroke tracing.
       </p>
 
       <div class="hero-buttons">
-        <a href="https://apps.apple.com/us/app/paatam/id6670503097" target="_blank" rel="noopener" class="appstore-badge">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-.9.04-2 .6-2.65 1.36-.58.67-1.08 1.74-.95 2.78 1.01.08 2.07-.52 2.68-1.27z"/></svg>
-          Download on the App Store
+        <a href="https://apps.apple.com/us/app/paatam/id6670503097" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.6rem 1.25rem;">
+          Download on the App Store ↗
         </a>
-        <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.6rem 1rem;">View on GitHub</a>
+        <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.6rem 1.1rem;">View on GitHub</a>
       </div>
     </section>
 
     <!-- Screenshot Gallery -->
     <section class="section-block">
-      <h2 class="section-title">App Interface & Walkthrough</h2>
+      <div class="section-header">
+        <h2 class="section-title">App Interface &amp; Walkthrough</h2>
+        <p class="section-subtitle">Tap any screenshot to enlarge in high resolution.</p>
+      </div>
       <div class="screenshots-scroll">
         <div class="screenshot-item">
-          <img src="../assets/paatam/screen1.jpg" alt="Paatam Main Screen">
+          <img src="../assets/paatam/screen1.jpg" alt="Paatam Main Screen" width="200" height="400" loading="lazy" decoding="async">
         </div>
         <div class="screenshot-item">
-          <img src="../assets/paatam/screen2.jpg" alt="Paatam Practice Screen">
+          <img src="../assets/paatam/screen2.jpg" alt="Paatam Practice Screen" width="200" height="400" loading="lazy" decoding="async">
         </div>
         <div class="screenshot-item">
-          <img src="../assets/paatam/screen3.jpg" alt="Paatam Progress Rings">
+          <img src="../assets/paatam/screen3.jpg" alt="Paatam Progress Rings" width="200" height="400" loading="lazy" decoding="async">
         </div>
         <div class="screenshot-item">
-          <img src="../assets/paatam/screen4.jpg" alt="Paatam Character Details">
+          <img src="../assets/paatam/screen4.jpg" alt="Paatam Character Details" width="200" height="400" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -180,7 +187,7 @@
     <section class="section-block">
       <h2 class="section-title">Technical Architecture</h2>
       <div class="edu-card">
-        <p>Originally engineered with Dart and Flutter (achieving 275+ organic downloads), Paatam was rewritten in native <strong>Swift & SwiftUI</strong> to take advantage of low-latency Apple Pencil tracking, native SwiftUI layout animations, and offline-first storage.</p>
+        <p>Originally engineered with Dart and Flutter (achieving 275+ organic downloads), Paatam was rewritten in native <strong>Swift &amp; SwiftUI</strong> to take advantage of low-latency Apple Pencil tracking, native SwiftUI layout animations, and offline-first storage.</p>
         <div class="tags-inline" style="margin-top: 1rem;">
           <span>Swift</span>
           <span>SwiftUI</span>
@@ -200,6 +207,11 @@
       <p class="footer-note"><a href="../">← Back to Harsha's Portfolio</a></p>
     </div>
   </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Screenshot Enlarge">
+  </div>
 
   <script src="../script.js"></script>
 </body>
