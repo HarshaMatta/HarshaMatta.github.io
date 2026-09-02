@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260902b">
 </head>
 <body>
 
@@ -67,12 +67,40 @@
         <div class="hero-status"><span class="status-dot"></span> Targeting May 2028 Grad</div>
       </div>
       <h1 class="hero-title">Building native systems, scientific computing tools, and quantitative models.</h1>
-      <p class="hero-intro">
-        Undergraduate studying Computer Science and Mathematics at <strong>UNC Chapel Hill</strong> (junior standing by credits). Grew up in Madison, Alabama, spent 5 years in London at Sutton Grammar School, and now based in North Carolina.
-      </p>
-      <p class="hero-sub">
-        I focus on local-first Apple platforms (Swift/SwiftUI), numerical methods in high-performance C++ (contributor to <code>deal.II</code>), and empirical volatility &amp; derivatives research (Python).
-      </p>
+      
+      <div class="hero-body-grid">
+        <div class="hero-bio">
+          <p class="hero-intro">
+            Undergraduate studying Computer Science and Mathematics at <strong>UNC Chapel Hill</strong> (junior standing by credits). Grew up in Madison, Alabama, spent 5 years in London at Sutton Grammar School, and now based in North Carolina.
+          </p>
+          <p class="hero-sub">
+            I focus on local-first Apple platforms (Swift/SwiftUI), numerical methods in high-performance C++ (contributor to <code>deal.II</code>), and empirical volatility &amp; derivatives research (Python).
+          </p>
+        </div>
+        <div class="hero-disciplines">
+          <div class="discipline-item">
+            <span class="disc-num">01</span>
+            <div class="disc-content">
+              <strong class="disc-title">Apple Systems &amp; Swift</strong>
+              <span class="disc-desc">Local-first productivity, AppKit/SwiftUI architectures, zero database lock-in.</span>
+            </div>
+          </div>
+          <div class="discipline-item">
+            <span class="disc-num">02</span>
+            <div class="disc-content">
+              <strong class="disc-title">Scientific Computing C++</strong>
+              <span class="disc-desc">deal.II library contributor, affine coordinate mappings, high-performance FEM solvers.</span>
+            </div>
+          </div>
+          <div class="discipline-item">
+            <span class="disc-num">03</span>
+            <div class="disc-content">
+              <strong class="disc-title">Quantitative Volatility</strong>
+              <span class="disc-desc">Variance swap carry pipelines, forward implied vs realized vol, options pricing.</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="social-pills">
         <a href="mailto:harsha.v.matta@gmail.com" class="pill-link">
