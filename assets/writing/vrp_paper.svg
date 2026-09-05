@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="vrpPaperBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14181f"/>
+      <stop offset="100%" stop-color="#0c0e12"/>
+    </linearGradient>
+    <pattern id="dotVrp" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.04)"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#vrpPaperBg)" rx="8"/>
+  <rect width="800" height="450" fill="url(#dotVrp)" rx="8"/>
+  <rect width="800" height="450" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="8"/>
+
+  <!-- Left: Article Info -->
+  <g transform="translate(60, 65)">
+    <rect x="0" y="0" width="145" height="26" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.3)" stroke-width="1" rx="4"/>
+    <text x="12" y="17" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">Empirical Research</text>
+
+    <text x="0" y="70" fill="#f8fafc" font-family="'Newsreader', Georgia, serif" font-size="30" font-weight="600" letter-spacing="-0.5">The Volatility</text>
+    <text x="0" y="105" fill="#38bdf8" font-family="'Newsreader', Georgia, serif" font-size="30" font-weight="600" letter-spacing="-0.5">Risk Premium</text>
+
+    <text x="0" y="155" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="14" font-weight="400">An empirical investigation into why S&amp;P 500</text>
+    <text x="0" y="178" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="14" font-weight="400">options systematically price forward volatility</text>
+    <text x="0" y="201" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="14" font-weight="400">higher than realized volatility over 15 years.</text>
+
+    <g transform="translate(0, 260)">
+      <text x="0" y="0" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11">HARSHA MATTA</text>
+      <text x="0" y="18" fill="#475569" font-family="'JetBrains Mono', monospace" font-size="10">Mar 1, 2025 • Published on Medium</text>
+    </g>
+  </g>
+
+  <!-- Right: VRP Spread Distribution Histogram Diagram -->
+  <g transform="translate(430, 85)">
+    <rect x="0" y="0" width="310" height="280" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="8"/>
+    
+    <text x="20" y="32" fill="#e2e8f0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">VRP Distribution Histogram</text>
+    <text x="20" y="50" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">VRP = VIX(t) − RV_30d_fwd(t)</text>
+
+    <!-- Axes -->
+    <line x1="30" y1="215" x2="285" y2="215" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+    <line x1="85" y1="215" x2="85" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+    <text x="80" y="230" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="9">0%</text>
+
+    <!-- Histogram Bars -->
+    <!-- Negative (Left of 0%) -->
+    <rect x="45" y="200" width="16" height="15" fill="#ef4444" opacity="0.8" rx="2"/>
+    <rect x="65" y="180" width="16" height="35" fill="#ef4444" opacity="0.8" rx="2"/>
+
+    <!-- Positive (Right of 0%) - Massive positive carry skew -->
+    <rect x="90" y="145" width="16" height="70" fill="#38bdf8" rx="2"/>
+    <rect x="110" y="105" width="16" height="110" fill="#38bdf8" rx="2"/>
+    <rect x="130" y="80" width="16" height="135" fill="#38bdf8" rx="2"/>
+    <rect x="150" y="95" width="16" height="120" fill="#38bdf8" rx="2"/>
+    <rect x="170" y="125" width="16" height="90" fill="#38bdf8" rx="2"/>
+    <rect x="190" y="155" width="16" height="60" fill="#38bdf8" rx="2"/>
+    <rect x="210" y="175" width="16" height="40" fill="#38bdf8" rx="2"/>
+    <rect x="230" y="195" width="16" height="20" fill="#38bdf8" rx="2"/>
+
+    <!-- Mean Spread Marker +4.21% -->
+    <line x1="138" y1="65" x2="138" y2="215" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <circle cx="138" cy="80" r="4" fill="#f59e0b"/>
+    <text x="145" y="74" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="9">Mean: +4.21%</text>
+
+    <text x="210" y="100" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">&gt;85% Positive</text>
+    <text x="210" y="112" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="8">15-Year Carry</text>
+
+    <!-- Formula Box -->
+    <rect x="25" y="245" width="260" height="25" fill="#0d1117" rx="4"/>
+    <text x="155" y="261" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">Carry = E[Var_swap] − E[Realized_var] &gt; 0</text>
+  </g>
+</svg>
