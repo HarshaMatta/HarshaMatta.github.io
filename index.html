@@ -16,12 +16,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Typography: Newsreader (Display Serif), Inter (Sans), JetBrains Mono (Code/Numbers) -->
+  <!-- Typography: Newsreader (Display Serif) + Inter (Sans) — system monospace for code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260904">
+  <link rel="stylesheet" href="styles.css?v=20260921">
 </head>
 <body>
 
@@ -38,14 +38,14 @@
         </div>
 
         <p class="brand-bio">
-          I build local-first native systems for Apple platforms, high-performance numerical routines in C++, and empirical quantitative models.
+          Undergraduate in CS &amp; Applied Mathematics at UNC Chapel Hill. I build native Apple software, C++ routines for scientific computing, and empirical derivatives models.
         </p>
 
         <!-- Sticky Section Navigation (Desktop) -->
         <nav class="sidebar-nav" aria-label="Section Navigation">
           <a href="#about" class="nav-item active">
             <span class="nav-indicator"></span>
-            <span>About</span>
+            <span>Now</span>
           </a>
           <a href="#projects" class="nav-item">
             <span class="nav-indicator"></span>
@@ -106,15 +106,15 @@
       <!-- 1. ABOUT / NOW -->
       <section id="about" class="section">
         <div class="section-label">
-          <h2 class="section-title">About</h2>
-          <span class="section-meta">Overview &amp; Current Focus</span>
+          <h2 class="section-title">Now</h2>
+          <span class="section-meta">Current Focus</span>
         </div>
         <div class="prose-block">
           <p>
-            I am an undergraduate student studying <strong>Applied Mathematics and Computer Science</strong> at the <strong>University of North Carolina at Chapel Hill</strong>. My technical work focuses on local-first native architectures for Apple devices, numerical methods in C++ scientific computing, and empirical derivatives research.
+            Building <strong>Next</strong>—a Markdown-native daily planner for iOS and macOS—and contributing coordinate inversion routines to the <strong>deal.II</strong> finite element library. Alongside that, writing about options pricing mechanics on Medium.
           </p>
           <p>
-            Currently, I am developing <strong>Next</strong>—a Markdown-native daily planner for iOS and macOS—while contributing coordinate transformation routines to the <strong>deal.II</strong> finite element library and writing about options pricing mechanics.
+            When I'm not in an editor I'm in a spreadsheet, running empirical volatility studies on 15+ years of SPX and VIX data. The thesis: implied forward volatility is systematically high, and the carry is real.
           </p>
         </div>
       </section>
@@ -167,7 +167,6 @@
               <span class="tech-tag">AppKit</span>
               <span class="tech-tag">Combine</span>
               <span class="tech-tag">NSFilePresenter</span>
-              <span class="metric-tag">Apple Silicon Native</span>
             </div>
           </article>
 
@@ -200,7 +199,6 @@
               <span class="tech-tag">Finite Element Methods</span>
               <span class="tech-tag">HPC</span>
               <span class="tech-tag">Numerical Analysis</span>
-              <span class="metric-tag">Open Source Contributor</span>
             </div>
           </article>
 
@@ -277,9 +275,6 @@
               </div>
               <div class="screenshot-thumb" data-lightbox="assets/paatam/screen3.jpg" data-caption="Paatam — Mastery Progress Rings">
                 <img src="assets/paatam/screen3.jpg" alt="Paatam Mastery Rings" loading="lazy">
-              </div>
-              <div class="screenshot-thumb" data-lightbox="assets/paatam/screen4.jpg" data-caption="Paatam — Character Stroke Details">
-                <img src="assets/paatam/screen4.jpg" alt="Paatam Script Details" loading="lazy">
               </div>
             </div>
 
@@ -360,7 +355,6 @@
               <span class="tech-tag">SciPy</span>
               <span class="tech-tag">Plotly</span>
               <span class="tech-tag">Streamlit</span>
-              <span class="metric-tag">Dynamic Surfaces</span>
             </div>
           </article>
 
@@ -369,7 +363,7 @@
             <div class="project-header">
               <div>
                 <h3 class="project-name">Black–Scholes Profit &amp; Payoff Model</h3>
-                <span class="project-status">Pricing Framework &amp; Payoff Boundaries</span>
+                <span class="project-status">Option Pricing &amp; P/L Visualization</span>
               </div>
               <div class="project-actions">
                 <a href="https://optionprofitmodel.streamlit.app" target="_blank" rel="noopener" class="btn-link primary">Live Dashboard ↗</a>
@@ -389,7 +383,6 @@
               <span class="tech-tag">Black-Scholes</span>
               <span class="tech-tag">Pandas</span>
               <span class="tech-tag">Streamlit</span>
-              <span class="metric-tag">Payoff Boundaries</span>
             </div>
           </article>
 
@@ -488,51 +481,52 @@
         </div>
       </section>
 
+
       <!-- 5. LEADERSHIP & GOVERNANCE -->
       <section id="leadership" class="section">
         <div class="section-label">
-          <h2 class="section-title">Leadership &amp; Governance</h2>
-          <span class="section-meta">Institutional &amp; Community Service</span>
+          <h2 class="section-title">Leadership</h2>
+          <span class="section-meta">Institutional &amp; Community</span>
         </div>
 
-        <div class="leadership-list">
+        <div class="leadership-stream">
 
-          <div class="leadership-item">
-            <div class="leadership-header">
-              <div>
-                <h3 class="leadership-role">Student Representative — Special Task Force on AI &amp; Academic Affairs</h3>
-                <div class="leadership-org">UNC Student Government &amp; Office of the Chancellor / Vice Provost for AI</div>
+          <div class="leadership-entry">
+            <div class="leadership-entry-header">
+              <div class="leadership-entry-left">
+                <h3 class="leadership-role">Student Representative, Special Task Force on AI &amp; Academic Affairs</h3>
+                <div class="leadership-org">UNC Student Government &amp; Office of the Chancellor</div>
               </div>
               <span class="leadership-time">Aug 2026 – Present</span>
             </div>
             <p class="leadership-desc">
-              Advise university executive leadership on AI governance, academic integrity standards, and equitable computational access across campus, formulating student-centered policy recommendations for generative AI integration.
+              Advise university executive leadership on AI governance, academic integrity, and equitable computational access. Formulating student-centered policy for generative AI integration across campus.
             </p>
           </div>
 
-          <div class="leadership-item">
-            <div class="leadership-header">
-              <div>
+          <div class="leadership-entry">
+            <div class="leadership-entry-header">
+              <div class="leadership-entry-left">
                 <h3 class="leadership-role">Founder &amp; President</h3>
-                <div class="leadership-org">Technospire (501(c)(3) CS Nonprofit Organization)</div>
+                <div class="leadership-org">Technospire — 501(c)(3) CS Education Nonprofit</div>
               </div>
               <span class="leadership-time">Mar 2024 – Jul 2025</span>
             </div>
             <p class="leadership-desc">
-              Built a regional CS education nonprofit with a 12-member executive board. Organized 3 hackathons engaging 130+ students, grew a 192-subscriber community newsletter, designed a Python curriculum taught to 30+ middle schoolers, and directed teams that shipped 4 websites for local small businesses.
+              Built from zero: 12-member executive board, 3 hackathons engaging <strong>130+ students</strong>, 192-subscriber newsletter, a Python curriculum taught to <strong>30+ middle schoolers</strong>, and <strong>4 websites</strong> shipped for local small businesses.
             </p>
           </div>
 
-          <div class="leadership-item">
-            <div class="leadership-header">
-              <div>
+          <div class="leadership-entry">
+            <div class="leadership-entry-header">
+              <div class="leadership-entry-left">
                 <h3 class="leadership-role">Treasurer &amp; Publicity Lead</h3>
-                <div class="leadership-org">UNC Sangam (South Asian Cultural Organization)</div>
+                <div class="leadership-org">UNC Sangam — South Asian Cultural Organization</div>
               </div>
               <span class="leadership-time">Fall 2025 – Present</span>
             </div>
             <p class="leadership-desc">
-              Manage financial allocations, expense tracking, and budget management for one of UNC's largest cultural student organizations. Directed and produced a promotional media campaign generating over 12,000 views to drive event attendance.
+              Financial allocations and expense tracking for one of UNC's largest cultural organizations. Directed a promotional media campaign generating <strong>12,000+ views</strong>.
             </p>
           </div>
 
@@ -542,51 +536,47 @@
       <!-- 6. EDUCATION & INVENTORY -->
       <section id="education" class="section">
         <div class="section-label">
-          <h2 class="section-title">Education &amp; Competencies</h2>
-          <span class="section-meta">Academic Foundation</span>
+          <h2 class="section-title">Education</h2>
+          <span class="section-meta">UNC Chapel Hill</span>
         </div>
 
-        <div class="education-block">
+        <div class="edu-block">
+          <div class="edu-primary">
+            <h3 class="edu-institution">University of North Carolina at Chapel Hill</h3>
+            <p class="edu-degree">B.S. Candidate — Applied Mathematics &amp; Computer Science</p>
+            <p class="edu-timeline">Expected May 2028</p>
+          </div>
 
-          <div class="education-card">
-            <div>
-              <h3 class="edu-institution">University of North Carolina at Chapel Hill</h3>
-              <p class="edu-degree">Candidate for B.S. in Applied Mathematics &amp; Computer Science</p>
-              <p class="edu-timeline">Expected May 2028 • Chapel Hill, NC</p>
-            </div>
-
-            <div class="coursework-list">
-              <span class="coursework-label">Selected Coursework:</span>
-              <div class="coursework-tags">
-                <span class="course-chip">Linear Algebra (MATH 347)</span>
-                <span class="course-chip">Multivariable Calculus (MATH 233)</span>
-                <span class="course-chip">Discrete Mathematics (MATH 381)</span>
-                <span class="course-chip">Data Structures (COMP 210)</span>
-                <span class="course-chip">Systems Fundamentals (COMP 211)</span>
-                <span class="course-chip">Foundations of Programming (COMP 301)</span>
-              </div>
+          <div class="coursework-list">
+            <span class="coursework-label">Selected Coursework</span>
+            <div class="coursework-tags">
+              <span class="course-chip">Linear Algebra (MATH 347)</span>
+              <span class="course-chip">Multivariable Calculus (MATH 233)</span>
+              <span class="course-chip">Discrete Mathematics (MATH 381)</span>
+              <span class="course-chip">Data Structures (COMP 210)</span>
+              <span class="course-chip">Systems Fundamentals (COMP 211)</span>
+              <span class="course-chip">Foundations of Programming (COMP 301)</span>
             </div>
           </div>
 
-          <div class="skills-inventory">
-            <div class="skill-row">
-              <span class="skill-heading">Languages</span>
-              <p class="skill-body">Swift, C++, Python, Java, Dart, JavaScript, SQL, LaTeX, HTML/CSS</p>
+          <div class="inventory-table">
+            <div class="inventory-row">
+              <span class="inventory-label">Languages</span>
+              <p class="inventory-value">Swift, C++, Python, Java, Dart, JavaScript, SQL, LaTeX, HTML/CSS</p>
             </div>
-            <div class="skill-row">
-              <span class="skill-heading">Systems &amp; Apple</span>
-              <p class="skill-body">SwiftUI, AppKit, Combine, App Intents, SwiftData, CoreLocation, MapKit, PencilKit, NSFilePresenter, Keychain Services API, XCTest</p>
+            <div class="inventory-row">
+              <span class="inventory-label">Apple Platforms</span>
+              <p class="inventory-value">SwiftUI, AppKit, Combine, App Intents, SwiftData, CoreLocation, MapKit, PencilKit, NSFilePresenter, Keychain Services API, XCTest</p>
             </div>
-            <div class="skill-row">
-              <span class="skill-heading">Quantitative &amp; Modeling</span>
-              <p class="skill-body">NumPy, SciPy, Pandas, Plotly, Streamlit, yfinance, Volatility Modeling, Variance Swaps, Finite Element Analysis (deal.II)</p>
+            <div class="inventory-row">
+              <span class="inventory-label">Quantitative</span>
+              <p class="inventory-value">NumPy, SciPy, Pandas, Plotly, Streamlit, yfinance, deal.II, Variance Swaps, Volatility Modeling</p>
             </div>
-            <div class="skill-row">
-              <span class="skill-heading">Honors &amp; Recognition</span>
-              <p class="skill-body">UKMT Mathematics Challenge (2x Gold Intermediate, Silver Senior), AP Scholar with Distinction, Duke of Edinburgh (Bronze &amp; Silver)</p>
+            <div class="inventory-row">
+              <span class="inventory-label">Honors</span>
+              <p class="inventory-value">UKMT Mathematics Challenge (2× Gold Intermediate, Silver Senior), AP Scholar with Distinction, Duke of Edinburgh (Bronze &amp; Silver)</p>
             </div>
           </div>
-
         </div>
       </section>
 
