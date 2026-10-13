@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="vrpAreaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background App Shell (Streamlit Dark Theme) -->
+  <rect width="800" height="450" fill="#0e1117" rx="8"/>
+  <rect width="800" height="450" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="8"/>
+
+  <!-- Streamlit Top Bar -->
+  <rect width="800" height="40" fill="#161b22" rx="8"/>
+  <circle cx="20" cy="20" r="4" fill="#ef4444" opacity="0.8"/>
+  <circle cx="34" cy="20" r="4" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="48" cy="20" r="4" fill="#10b981" opacity="0.8"/>
+  <text x="70" y="24" fill="#f0f6fc" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">volatilityriskpremium.streamlit.app</text>
+  <rect x="660" y="11" width="120" height="18" fill="#21262d" rx="4"/>
+  <text x="680" y="24" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">Python 3.12 / v2.4</text>
+
+  <!-- Left Sidebar (Streamlit Controls) -->
+  <rect x="0" y="40" width="190" height="410" fill="#161b22"/>
+  <line x1="190" y1="40" x2="190" y2="450" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <text x="20" y="70" fill="#f0f6fc" font-family="'Inter', sans-serif" font-size="12" font-weight="700">Model Parameters</text>
+
+  <text x="20" y="98" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Historical Period</text>
+  <rect x="20" y="106" width="150" height="24" fill="#0d1117" stroke="rgba(255,255,255,0.1)" rx="4"/>
+  <text x="30" y="122" fill="#c9d1d9" font-family="'JetBrains Mono', monospace" font-size="10">2010 – 2026 (Daily)</text>
+
+  <text x="20" y="152" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Realized Vol Horizon</text>
+  <rect x="20" y="160" width="150" height="24" fill="#0d1117" stroke="rgba(255,255,255,0.1)" rx="4"/>
+  <text x="30" y="176" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">30-Day Forward</text>
+
+  <text x="20" y="206" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Regime Threshold (VIX)</text>
+  <line x1="20" y1="225" x2="170" y2="225" stroke="#30363d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="20" y1="225" x2="110" y2="225" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="110" cy="225" r="6" fill="#38bdf8"/>
+  <text x="20" y="244" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="9">Crisis Cutoff: 28.0</text>
+
+  <text x="20" y="278" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Position Sizing</text>
+  <rect x="20" y="286" width="150" height="24" fill="#0d1117" stroke="rgba(255,255,255,0.1)" rx="4"/>
+  <text x="30" y="302" fill="#c9d1d9" font-family="'JetBrains Mono', monospace" font-size="10">Inverse Volatility</text>
+
+  <!-- Sidebar Status -->
+  <rect x="20" y="380" width="150" height="42" fill="#1f242c" rx="4"/>
+  <circle cx="34" cy="401" r="4" fill="#10b981"/>
+  <text x="46" y="398" fill="#f0f6fc" font-family="'Inter', sans-serif" font-size="10" font-weight="600">Pipeline Synced</text>
+  <text x="46" y="411" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="9">4,028 trading days</text>
+
+  <!-- Main Dashboard Content -->
+  <!-- Top Metric KPI Cards -->
+  <g transform="translate(205, 55)">
+    <!-- KPI 1 -->
+    <rect x="0" y="0" width="135" height="60" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="6"/>
+    <text x="12" y="20" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Avg VIX (Implied)</text>
+    <text x="12" y="44" fill="#f0f6fc" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700">18.42%</text>
+    <text x="85" y="44" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">15+ Yrs</text>
+
+    <!-- KPI 2 -->
+    <rect x="145" y="0" width="135" height="60" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="6"/>
+    <text x="157" y="20" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Avg Realized Vol</text>
+    <text x="157" y="44" fill="#f0f6fc" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700">14.21%</text>
+    <text x="230" y="44" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="10">SPX 30d</text>
+
+    <!-- KPI 3 -->
+    <rect x="290" y="0" width="140" height="60" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="6"/>
+    <text x="302" y="20" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Mean VRP Spread</text>
+    <text x="302" y="44" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700">+4.21%</text>
+    <text x="382" y="44" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">&gt;85% Pos</text>
+
+    <!-- KPI 4 -->
+    <rect x="440" y="0" width="135" height="60" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="6"/>
+    <text x="452" y="20" fill="#8b949e" font-family="'Inter', sans-serif" font-size="10">Strategy Sharpe</text>
+    <text x="452" y="44" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700">1.42</text>
+    <text x="520" y="44" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="10">Harvest</text>
+  </g>
+
+  <!-- Main Chart Container -->
+  <g transform="translate(205, 130)">
+    <rect x="0" y="0" width="575" height="190" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="6"/>
+    <text x="16" y="24" fill="#f0f6fc" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Historical Time Series: VIX Implied vs. 30-Day Forward Realized Volatility</text>
+    
+    <!-- Legend -->
+    <line x1="390" y1="20" x2="415" y2="20" stroke="#38bdf8" stroke-width="2"/>
+    <text x="422" y="24" fill="#c9d1d9" font-family="'JetBrains Mono', monospace" font-size="9">VIX Implied</text>
+    <line x1="485" y1="20" x2="510" y2="20" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <text x="517" y="24" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="9">Realized Vol</text>
+
+    <!-- Chart Grid Lines -->
+    <line x1="35" y1="50" x2="555" y2="50" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="35" y1="90" x2="555" y2="90" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="35" y1="130" x2="555" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="35" y1="170" x2="555" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+    <text x="12" y="54" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="9">60%</text>
+    <text x="12" y="94" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="9">40%</text>
+    <text x="12" y="134" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="9">20%</text>
+    <text x="16" y="174" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="9">0%</text>
+
+    <!-- Crisis Shading (2020) -->
+    <rect x="330" y="40" width="38" height="130" fill="rgba(239,68,68,0.12)"/>
+    <text x="334" y="48" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="8">COVID</text>
+
+    <!-- Crisis Shading (2018 Volmageddon) -->
+    <rect x="255" y="40" width="20" height="130" fill="rgba(239,68,68,0.08)"/>
+
+    <!-- Shaded Spread Area -->
+    <path d="M 35 145 Q 90 142, 140 148 T 255 125 L 265 65 L 275 130 T 330 120 L 345 45 L 368 115 T 460 135 T 555 140 L 555 152 L 460 148 L 368 135 L 345 60 L 330 135 L 275 145 L 265 85 L 255 140 T 140 156 Q 90 152, 35 156 Z" fill="url(#vrpAreaGrad)"/>
+
+    <!-- VIX Implied Line (Cyan) -->
+    <path d="M 35 145 Q 90 142, 140 148 T 200 135 T 255 125 L 265 65 L 275 130 T 330 120 L 345 45 L 368 115 T 430 128 T 490 132 T 555 140" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Realized Vol Line (Muted Dashed) -->
+    <path d="M 35 156 Q 90 152, 140 156 T 200 145 T 255 140 L 265 85 L 275 145 T 330 135 L 345 60 L 368 135 T 430 140 T 490 145 T 555 152" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Time Axis Labels -->
+    <text x="35" y="184" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="8">2010</text>
+    <text x="145" y="184" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="8">2014</text>
+    <text x="255" y="184" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="8">2018</text>
+    <text x="365" y="184" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="8">2020</text>
+    <text x="475" y="184" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="8">2024</text>
+    <text x="535" y="184" fill="#6e7681" font-family="'JetBrains Mono', monospace" font-size="8">2026</text>
+  </g>
+
+  <!-- Bottom Panel: Strategy Cumulative Growth & Regime Breakdown -->
+  <g transform="translate(205, 330)">
+    <!-- Cumulative Harvest P&L Subplot -->
+    <rect x="0" y="0" width="370" height="105" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="6"/>
+    <text x="14" y="20" fill="#f0f6fc" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Simulated Variance Harvest Cumulative P&amp;L</text>
+    <path d="M 25 85 L 90 78 L 150 72 L 200 68 L 240 60 L 255 75 L 280 55 L 310 50 L 325 70 L 345 42 L 355 35" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+    <text x="270" y="32" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">+284.6% Return</text>
+    <line x1="25" y1="85" x2="355" y2="85" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+    <!-- Regime Table Subplot -->
+    <rect x="380" y="0" width="195" height="105" fill="#161b22" stroke="rgba(255,255,255,0.06)" rx="6"/>
+    <text x="392" y="20" fill="#f0f6fc" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Regime Carry Split</text>
+    <text x="392" y="42" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="9">Bull Market: <tspan fill="#38bdf8">+4.8% carry</tspan></text>
+    <text x="392" y="60" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="9">Neutral / Range: <tspan fill="#38bdf8">+3.4% carry</tspan></text>
+    <text x="392" y="78" fill="#8b949e" font-family="'JetBrains Mono', monospace" font-size="9">Crisis Spikes: <tspan fill="#ef4444">-14.2% jump</tspan></text>
+    <text x="392" y="96" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9">Net Annualized: +6.8%</text>
+  </g>
+</svg>

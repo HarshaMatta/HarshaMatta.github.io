@@ -1,620 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harsha Matta | Applied Mathematics &amp; Computer Science @ UNC Chapel Hill</title>
-  <meta name="description" content="Personal portfolio of Harsha Matta. Applied Mathematics &amp; Computer Science at UNC Chapel Hill. Local-first Apple systems (Swift), scientific computing (C++ deal.II), and quantitative volatility modeling.">
-  <meta name="author" content="Harsha Matta">
+  <meta name="description" content="Personal portfolio of Harsha Matta. Applied Mathematics &amp; Computer Science at UNC Chapel Hill. Local-first Apple systems (Swift), scientific computing (C++ deal.II), and quantitative volatility modeling." />
+  <meta name="author" content="Harsha Matta" />
 
   <!-- OpenGraph / Social Metadata -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://harshamatta.github.io/">
-  <meta property="og:title" content="Harsha Matta | Systems &amp; Quantitative Engineering">
-  <meta property="og:description" content="Applied Mathematics &amp; Computer Science at UNC Chapel Hill. Native Apple systems, C++ scientific computing, and empirical quantitative derivatives modeling.">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harshamatta.github.io/" />
+  <meta property="og:title" content="Harsha Matta | Systems &amp; Quantitative Engineering" />
+  <meta property="og:description" content="Applied Mathematics &amp; Computer Science at UNC Chapel Hill. Native Apple systems, C++ scientific computing, and empirical quantitative derivatives modeling." />
+  <meta property="og:image" content="/assets/dealii/affine_mapping.svg" />
+
+  <!-- Twitter Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Harsha Matta | Systems &amp; Quantitative Engineering" />
+  <meta name="twitter:description" content="Applied Mathematics &amp; Computer Science at UNC Chapel Hill. Native Apple systems, C++ scientific computing, and empirical quantitative derivatives modeling." />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
 
-  <!-- Typography: Newsreader (Display Serif) + Inter (Sans) — system monospace for code -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <!-- Zero-Flicker Synchronous Theme Initializer -->
+  <script>
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = (stored === 'dark' || stored === 'light')
+          ? stored
+          : (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.style.colorScheme = 'dark';
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.style.colorScheme = 'light';
+        }
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.style.colorScheme = 'dark';
+      }
+    })();
+  </script>
+  <style>
+    /* Critical base canvas paint prior to CSS bundle evaluation */
+    html {
+      background-color: #FBF9F5;
+      color: #2C2A29;
+    }
+    html.dark {
+      background-color: #0B0D0E;
+      color: #F3F4F6;
+    }
+  </style>
 
-  <link rel="stylesheet" href="styles.css?v=20260921">
+  <!-- Typography: Newsreader (Display Serif) + Inter (Sans) + JetBrains Mono (Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
 </head>
-<body>
-
-  <div class="page-wrapper">
-
-    <!-- ====================================================================
-         LEFT SIDEBAR: Fixed/Sticky Identity, Concise Summary, Nav, & Links
-         ==================================================================== -->
-    <aside class="sidebar">
-      <div class="sidebar-top">
-        <div>
-          <h1 class="brand-name">Harsha Matta</h1>
-          <p class="brand-title">Applied Mathematics &amp; Computer Science @ UNC Chapel Hill</p>
-        </div>
-
-        <p class="brand-bio">
-          Undergraduate in CS &amp; Applied Mathematics at UNC Chapel Hill. I build native Apple software, C++ routines for scientific computing, and empirical derivatives models.
-        </p>
-
-        <!-- Sticky Section Navigation (Desktop) -->
-        <nav class="sidebar-nav" aria-label="Section Navigation">
-          <a href="#about" class="nav-item active">
-            <span class="nav-indicator"></span>
-            <span>Now</span>
-          </a>
-          <a href="#projects" class="nav-item">
-            <span class="nav-indicator"></span>
-            <span>Projects</span>
-          </a>
-          <a href="#quant" class="nav-item">
-            <span class="nav-indicator"></span>
-            <span>Quant Research</span>
-          </a>
-          <a href="#writing" class="nav-item">
-            <span class="nav-indicator"></span>
-            <span>Writing</span>
-          </a>
-          <a href="#leadership" class="nav-item">
-            <span class="nav-indicator"></span>
-            <span>Leadership</span>
-          </a>
-          <a href="#education" class="nav-item">
-            <span class="nav-indicator"></span>
-            <span>Education</span>
-          </a>
-          <a href="#contact" class="nav-item">
-            <span class="nav-indicator"></span>
-            <span>Contact</span>
-          </a>
-        </nav>
-      </div>
-
-      <!-- Social & Professional Links -->
-      <div class="sidebar-socials">
-        <a href="mailto:harsha.v.matta@gmail.com" class="social-link" title="Email Harsha Matta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <span>Email</span>
-        </a>
-        <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="social-link" title="GitHub Profile">
-          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub</span>
-        </a>
-        <a href="https://linkedin.com/in/harshamatta" target="_blank" rel="noopener" class="social-link" title="LinkedIn Profile">
-          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://medium.com/@harsha.v.matta" target="_blank" rel="noopener" class="social-link" title="Medium Profile">
-          <svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-          <span>Medium</span>
-        </a>
-        <a href="assets/resume.pdf" target="_blank" rel="noopener" class="resume-badge">
-          <span>Resume PDF ↗</span>
-        </a>
-      </div>
-    </aside>
-
-    <!-- ====================================================================
-         RIGHT COLUMN: Linear Scroll Stream (One Job per Section)
-         ==================================================================== -->
-    <main class="content-stream">
-
-      <!-- 1. ABOUT / NOW -->
-      <section id="about" class="section">
-        <div class="section-label">
-          <h2 class="section-title">Now</h2>
-          <span class="section-meta">Current Focus</span>
-        </div>
-        <div class="prose-block">
-          <p>
-            Building <strong>Next</strong>—a Markdown-native daily planner for iOS and macOS—and contributing coordinate inversion routines to the <strong>deal.II</strong> finite element library. Writing about options pricing on Medium on the side.
-          </p>
-        </div>
-      </section>
-
-      <!-- 2. PROJECTS (4 Curated Best) -->
-      <section id="projects" class="section">
-        <div class="section-label">
-          <h2 class="section-title">Selected Projects</h2>
-          <span class="section-meta">4 Core Initiatives</span>
-        </div>
-
-        <div class="projects-list">
-
-          <!-- Project 1: Next -->
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title-group">
-                <img src="assets/next/icon.png" alt="Next App Icon" class="project-icon">
-                <div>
-                  <h3 class="project-name">Next — Unified Markdown Workspace</h3>
-                  <span class="project-status">macOS &amp; iOS • In Public Beta</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://harshamatta.github.io/projNext/" target="_blank" rel="noopener" class="btn-link primary">Project Site ↗</a>
-                <a href="https://github.com/HarshaMatta/projNext" target="_blank" rel="noopener" class="btn-link">GitHub ↗</a>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              A local-first productivity workspace that turns plain Markdown files into a transparent relational database without cloud or database lock-in. Features a 24-hour tactile drag-and-drop timeline with line-level string-hash sync via <code>NSFilePresenter</code> and on-device Apple Intelligence parsing.
-            </p>
-
-            <!-- Flat Screenshots Gallery (Click to enlarge in lightbox) -->
-            <div class="gallery-strip" aria-label="Next App Screenshots">
-              <div class="screenshot-thumb" data-lightbox="assets/next/screen1.jpg" data-caption="Next — Daily Timeline &amp; Health Dashboard">
-                <img src="assets/next/screen1.jpg" alt="Next Daily Timeline and Metric Dashboard" loading="lazy">
-              </div>
-              <div class="screenshot-thumb" data-lightbox="assets/next/screen2.jpg" data-caption="Next — Multi-Day Schedule &amp; Time-Blocking Grid">
-                <img src="assets/next/screen2.jpg" alt="Next Multi-Day Schedule Grid" loading="lazy">
-              </div>
-              <div class="screenshot-thumb" data-lightbox="assets/next/screen3.jpg" data-caption="Next — Markdown Vault Task Backlog">
-                <img src="assets/next/screen3.jpg" alt="Next Markdown Vault Task Backlog" loading="lazy">
-              </div>
-            </div>
-
-            <div class="tech-tags">
-              <span class="tech-tag">Swift</span>
-              <span class="tech-tag">SwiftUI</span>
-              <span class="tech-tag">AppKit</span>
-              <span class="tech-tag">Combine</span>
-              <span class="tech-tag">NSFilePresenter</span>
-            </div>
-          </article>
-
-          <!-- Project 2: deal.II -->
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title-group">
-                <div class="project-icon-placeholder">d2</div>
-                <div>
-                  <h3 class="project-name">deal.II — Scientific Computing Engine</h3>
-                  <span class="project-status">Open Source C++ HPC Library</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/dealii/dealii" target="_blank" rel="noopener" class="btn-link primary">dealii/dealii ↗</a>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              Contributed numerical coordinate mapping routines to a large-scale C++ finite element library used worldwide for high-performance physical simulations. Resolved real-to-unit affine inversion inaccuracies on distorted quadrilateral cell geometries to maintain quadratic Newton convergence without solver divergence.
-            </p>
-
-            <!-- Technical Affine Mapping Diagram (Click to enlarge in lightbox) -->
-            <div class="diagram-frame" data-lightbox="assets/dealii/affine_mapping.svg" data-caption="deal.II — Unit Reference Cell to Physical Distorted Mesh Coordinate Inversion">
-              <img src="assets/dealii/affine_mapping.svg" alt="deal.II Real-to-Unit Affine Coordinate Mapping Diagram" loading="lazy">
-            </div>
-
-            <div class="tech-tags">
-              <span class="tech-tag">C++20</span>
-              <span class="tech-tag">Finite Element Methods</span>
-              <span class="tech-tag">HPC</span>
-              <span class="tech-tag">Numerical Analysis</span>
-            </div>
-          </article>
-
-          <!-- Project 3: TrackInOffice -->
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title-group">
-                <img src="assets/trackinoffice/icon.jpg" alt="TrackInOffice App Icon" class="project-icon">
-                <div>
-                  <h3 class="project-name">TrackInOffice</h3>
-                  <span class="project-status">iOS App • Published 2026</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://apps.apple.com/us/app/trackinoffice/id6762209341" target="_blank" rel="noopener" class="btn-link primary">App Store ↗</a>
-                <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="btn-link">GitHub ↗</a>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              A privacy-first hybrid work attendance tracker that automatically logs office arrivals using OS-level geofencing. Runs quietly in the background with zero battery drain, securing workplace coordinates in the iOS Keychain and shielding exported CSV data against formula injection.
-            </p>
-
-            <!-- Flat Screenshots Gallery -->
-            <div class="gallery-strip" aria-label="TrackInOffice App Screenshots">
-              <div class="screenshot-thumb" data-lightbox="assets/trackinoffice/screen1.jpg" data-caption="TrackInOffice — Goal Progress Rings &amp; Attendance Breakdown">
-                <img src="assets/trackinoffice/screen1.jpg" alt="TrackInOffice Dashboard Progress Rings" loading="lazy">
-              </div>
-              <div class="screenshot-thumb" data-lightbox="assets/trackinoffice/screen2.jpg" data-caption="TrackInOffice — Color-Coded Monthly Calendar Work Log">
-                <img src="assets/trackinoffice/screen2.jpg" alt="TrackInOffice Calendar Log" loading="lazy">
-              </div>
-              <div class="screenshot-thumb" data-lightbox="assets/trackinoffice/screen3.jpg" data-caption="TrackInOffice — Geofence Radius &amp; Workplace Coordinates">
-                <img src="assets/trackinoffice/screen3.jpg" alt="TrackInOffice Workplace Settings" loading="lazy">
-              </div>
-            </div>
-
-            <div class="tech-tags">
-              <span class="tech-tag">Swift</span>
-              <span class="tech-tag">SwiftUI</span>
-              <span class="tech-tag">SwiftData</span>
-              <span class="tech-tag">CoreLocation</span>
-              <span class="tech-tag">Keychain API</span>
-              <span class="metric-tag">5.0 ★ App Store</span>
-            </div>
-          </article>
-
-          <!-- Project 4: Paatam -->
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title-group">
-                <img src="assets/paatam/icon.jpg" alt="Paatam App Icon" class="project-icon">
-                <div>
-                  <h3 class="project-name">Paatam — Indic Script Learning</h3>
-                  <span class="project-status">iOS App • 275+ Downloads</span>
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://apps.apple.com/us/app/paatam/id6670503097" target="_blank" rel="noopener" class="btn-link primary">App Store ↗</a>
-                <a href="paatam/" class="btn-link">Case Study ↗</a>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              An interactive handwriting companion for learning Indian language scripts. Evaluates stroke direction heuristics and character geometry in real time using Apple PencilKit, incorporating algorithmic spaced repetition to reinforce long-term symbol retention.
-            </p>
-
-            <!-- Flat Screenshots Gallery -->
-            <div class="gallery-strip" aria-label="Paatam App Screenshots">
-              <div class="screenshot-thumb" data-lightbox="assets/paatam/screen1.jpg" data-caption="Paatam — Main Category Dashboard">
-                <img src="assets/paatam/screen1.jpg" alt="Paatam Main Dashboard" loading="lazy">
-              </div>
-              <div class="screenshot-thumb" data-lightbox="assets/paatam/screen2.jpg" data-caption="Paatam — Interactive Stroke Tracing">
-                <img src="assets/paatam/screen2.jpg" alt="Paatam Stroke Practice" loading="lazy">
-              </div>
-              <div class="screenshot-thumb" data-lightbox="assets/paatam/screen3.jpg" data-caption="Paatam — Mastery Progress Rings">
-                <img src="assets/paatam/screen3.jpg" alt="Paatam Mastery Rings" loading="lazy">
-              </div>
-            </div>
-
-            <div class="tech-tags">
-              <span class="tech-tag">Swift</span>
-              <span class="tech-tag">SwiftUI</span>
-              <span class="tech-tag">PencilKit</span>
-              <span class="tech-tag">Spaced Repetition</span>
-              <span class="metric-tag">275+ Downloads</span>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- 3. QUANT RESEARCH & INTERACTIVE TOOLS -->
-      <section id="quant" class="section">
-        <div class="section-label">
-          <h2 class="section-title">Quant Research &amp; Tools</h2>
-          <span class="section-meta">3 Interactive Models</span>
-        </div>
-
-        <div class="quant-list">
-
-          <!-- Quant Tool 1: VRP Pipeline -->
-          <article class="quant-card">
-            <div class="project-header">
-              <div>
-                <h3 class="project-name">Volatility Risk Premium Pipeline</h3>
-                <span class="project-status">Empirical Study Across 15+ Years SPX &amp; VIX History</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://volatilityriskpremium.streamlit.app/" target="_blank" rel="noopener" class="btn-link primary">Live Dashboard ↗</a>
-                <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="btn-link">Read Paper ↗</a>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              An empirical research pipeline analyzing why S&amp;P 500 index options systematically price forward volatility higher than realized market volatility. Simulates a monthly variance swap harvest strategy delivering a 1.42 Sharpe ratio across bull, range, and crisis regimes.
-            </p>
-
-            <a href="https://volatilityriskpremium.streamlit.app/" target="_blank" rel="noopener" class="quant-preview-link" title="Open live Volatility Risk Premium Streamlit dashboard">
-              <img src="assets/quant/vrp_dashboard.svg" alt="Volatility Risk Premium Dashboard Preview" loading="lazy">
-            </a>
-
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Pandas</span>
-              <span class="tech-tag">NumPy</span>
-              <span class="tech-tag">Plotly</span>
-              <span class="tech-tag">Streamlit</span>
-              <span class="metric-tag">1.42 Sharpe • 15+ Yrs</span>
-            </div>
-          </article>
-
-          <!-- Quant Tool 2: Options Greeks Visualizer -->
-          <article class="quant-card">
-            <div class="project-header">
-              <div>
-                <h3 class="project-name">Options Greeks Real-Time Visualizer</h3>
-                <span class="project-status">Analytical Derivative Sensitivities</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://greeksvisualizer.streamlit.app" target="_blank" rel="noopener" class="btn-link primary">Live Dashboard ↗</a>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              An interactive dashboard modeling Delta, Gamma, Theta, Vega, and Rho sensitivities across strike prices, implied volatility surfaces, and expirations using analytical SciPy formulations.
-            </p>
-
-            <a href="https://greeksvisualizer.streamlit.app" target="_blank" rel="noopener" class="quant-preview-link" title="Open live Greeks Visualizer Streamlit dashboard">
-              <img src="assets/quant/greeks_dashboard.svg" alt="Options Greeks Visualizer Dashboard Preview" loading="lazy">
-            </a>
-
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">SciPy</span>
-              <span class="tech-tag">Plotly</span>
-              <span class="tech-tag">Streamlit</span>
-            </div>
-          </article>
-
-          <!-- Quant Tool 3: Black-Scholes Model -->
-          <article class="quant-card">
-            <div class="project-header">
-              <div>
-                <h3 class="project-name">Black–Scholes Profit &amp; Payoff Model</h3>
-                <span class="project-status">Option Pricing &amp; P/L Visualization</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://optionprofitmodel.streamlit.app" target="_blank" rel="noopener" class="btn-link primary">Live Dashboard ↗</a>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              Computes analytical call and put premiums, break-even thresholds, and expiration profit/loss boundaries with dynamic volatility adjustments and time decay schedules.
-            </p>
-
-            <a href="https://optionprofitmodel.streamlit.app" target="_blank" rel="noopener" class="quant-preview-link" title="Open live Black-Scholes Model Streamlit dashboard">
-              <img src="assets/quant/black_scholes_dashboard.svg" alt="Black-Scholes Option Profit Model Dashboard Preview" loading="lazy">
-            </a>
-
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Black-Scholes</span>
-              <span class="tech-tag">Pandas</span>
-              <span class="tech-tag">Streamlit</span>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- 4. TECHNICAL WRITING -->
-      <section id="writing" class="section">
-        <div class="section-label">
-          <h2 class="section-title">Technical Writing</h2>
-          <span class="section-meta">Published on Medium</span>
-        </div>
-
-        <div class="writing-grid">
-
-          <!-- Article 1 -->
-          <article class="article-card">
-            <a href="https://medium.com/@harsha.v.matta/how-do-you-price-an-option-5fbdbce99280" target="_blank" rel="noopener" class="article-card-link">
-              <div class="article-thumbnail-frame">
-                <img src="assets/writing/option_pricing.svg" alt="How do you price an option? Cover" loading="lazy">
-              </div>
-              <div class="article-content">
-                <div class="article-meta-row">
-                  <span class="article-topic">Pricing Theory</span>
-                  <span>Feb 14, 2025</span>
-                </div>
-                <h3 class="article-title">How do you price an option?</h3>
-                <p class="article-hook">The intuitive foundation of modern derivative valuation theory: expected payoffs, risk-neutral probabilities, and no-arbitrage mechanics.</p>
-                <div class="article-footer-cta">
-                  <span>Read on Medium ↗</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 2 -->
-          <article class="article-card">
-            <a href="https://medium.com/@harsha.v.matta/how-to-price-an-american-option-part-1-portfolio-approach-df14612ef694" target="_blank" rel="noopener" class="article-card-link">
-              <div class="article-thumbnail-frame">
-                <img src="assets/writing/american_options_p1.svg" alt="American Options, Part 1 Cover" loading="lazy">
-              </div>
-              <div class="article-content">
-                <div class="article-meta-row">
-                  <span class="article-topic">Derivatives</span>
-                  <span>Feb 18, 2025</span>
-                </div>
-                <h3 class="article-title">American Options, Part 1: Portfolio Approach</h3>
-                <p class="article-hook">Constructing replication portfolios, deriving the early exercise boundary, and examining put-call parity violations under early exercise.</p>
-                <div class="article-footer-cta">
-                  <span>Read on Medium ↗</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 3 -->
-          <article class="article-card">
-            <a href="https://medium.com/@harsha.v.matta/how-to-price-an-american-option-part-2-the-risk-neutral-approach-509ef168a3fe" target="_blank" rel="noopener" class="article-card-link">
-              <div class="article-thumbnail-frame">
-                <img src="assets/writing/american_options_p2.svg" alt="American Options, Part 2 Cover" loading="lazy">
-              </div>
-              <div class="article-content">
-                <div class="article-meta-row">
-                  <span class="article-topic">Quantitative Modeling</span>
-                  <span>Feb 24, 2025</span>
-                </div>
-                <h3 class="article-title">American Options, Part 2: The Risk-Neutral Approach</h3>
-                <p class="article-hook">Discretizing continuous diffusion paths into binomial lattice trees, backwards induction algorithms, and path-dependent exercise premiums.</p>
-                <div class="article-footer-cta">
-                  <span>Read on Medium ↗</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 4 -->
-          <article class="article-card">
-            <a href="https://medium.com/@harsha.v.matta/volatility-risk-premium-a35d89502110" target="_blank" rel="noopener" class="article-card-link">
-              <div class="article-thumbnail-frame">
-                <img src="assets/writing/vrp_paper.svg" alt="The Volatility Risk Premium Cover" loading="lazy">
-              </div>
-              <div class="article-content">
-                <div class="article-meta-row">
-                  <span class="article-topic">Empirical Volatility</span>
-                  <span>Mar 1, 2025</span>
-                </div>
-                <h3 class="article-title">The Volatility Risk Premium</h3>
-                <p class="article-hook">An empirical investigation into why S&amp;P 500 options systematically price forward volatility higher than realized volatility over 15 years.</p>
-                <div class="article-footer-cta">
-                  <span>Read on Medium ↗</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-        </div>
-      </section>
-
-
-      <!-- 5. LEADERSHIP & GOVERNANCE -->
-      <section id="leadership" class="section">
-        <div class="section-label">
-          <h2 class="section-title">Leadership</h2>
-          <span class="section-meta">Institutional &amp; Community</span>
-        </div>
-
-        <div class="leadership-stream">
-
-          <div class="leadership-entry">
-            <div class="leadership-entry-header">
-              <div class="leadership-entry-left">
-                <h3 class="leadership-role">Student Representative, Special Task Force on AI &amp; Academic Affairs</h3>
-                <div class="leadership-org">UNC Student Government &amp; Office of the Chancellor</div>
-              </div>
-              <span class="leadership-time">Aug 2026 – Present</span>
-            </div>
-            <p class="leadership-desc">
-              Advise university executive leadership on AI governance, academic integrity, and equitable computational access. Formulating student-centered policy for generative AI integration across campus.
-            </p>
-          </div>
-
-          <div class="leadership-entry">
-            <div class="leadership-entry-header">
-              <div class="leadership-entry-left">
-                <h3 class="leadership-role">Founder &amp; President</h3>
-                <div class="leadership-org">Technospire — 501(c)(3) CS Education Nonprofit</div>
-              </div>
-              <span class="leadership-time">Mar 2024 – Jul 2025</span>
-            </div>
-            <p class="leadership-desc">
-              Built from zero: 12-member executive board, 3 hackathons engaging <strong>130+ students</strong>, 192-subscriber newsletter, a Python curriculum taught to <strong>30+ middle schoolers</strong>, and <strong>4 websites</strong> shipped for local small businesses.
-            </p>
-          </div>
-
-          <div class="leadership-entry">
-            <div class="leadership-entry-header">
-              <div class="leadership-entry-left">
-                <h3 class="leadership-role">Treasurer &amp; Publicity Lead</h3>
-                <div class="leadership-org">UNC Sangam — South Asian Cultural Organization</div>
-              </div>
-              <span class="leadership-time">Fall 2025 – Present</span>
-            </div>
-            <p class="leadership-desc">
-              Financial allocations and expense tracking for one of UNC's largest cultural organizations. Directed a promotional media campaign generating <strong>12,000+ views</strong>.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- 6. EDUCATION & INVENTORY -->
-      <section id="education" class="section">
-        <div class="section-label">
-          <h2 class="section-title">Education</h2>
-          <span class="section-meta">UNC Chapel Hill</span>
-        </div>
-
-        <div class="edu-block">
-          <div class="edu-primary">
-            <h3 class="edu-institution">University of North Carolina at Chapel Hill</h3>
-            <p class="edu-degree">B.S. Candidate — Applied Mathematics &amp; Computer Science</p>
-            <p class="edu-timeline">Expected May 2028</p>
-          </div>
-
-          <div class="coursework-list">
-            <span class="coursework-label">Selected Coursework</span>
-            <div class="coursework-tags">
-              <span class="course-chip">Linear Algebra (MATH 347)</span>
-              <span class="course-chip">Multivariable Calculus (MATH 233)</span>
-              <span class="course-chip">Discrete Mathematics (MATH 381)</span>
-              <span class="course-chip">Data Structures (COMP 210)</span>
-              <span class="course-chip">Systems Fundamentals (COMP 211)</span>
-              <span class="course-chip">Foundations of Programming (COMP 301)</span>
-            </div>
-          </div>
-
-          <div class="inventory-table">
-            <div class="inventory-row">
-              <span class="inventory-label">Languages</span>
-              <p class="inventory-value">Swift, C++, Python, Java, Dart, JavaScript, SQL, LaTeX, HTML/CSS</p>
-            </div>
-            <div class="inventory-row">
-              <span class="inventory-label">Apple Platforms</span>
-              <p class="inventory-value">SwiftUI, AppKit, Combine, App Intents, SwiftData, CoreLocation, MapKit, PencilKit, NSFilePresenter, Keychain Services API, XCTest</p>
-            </div>
-            <div class="inventory-row">
-              <span class="inventory-label">Quantitative</span>
-              <p class="inventory-value">NumPy, SciPy, Pandas, Plotly, Streamlit, yfinance, deal.II, Variance Swaps, Volatility Modeling</p>
-            </div>
-            <div class="inventory-row">
-              <span class="inventory-label">Honors</span>
-              <p class="inventory-value">UKMT Mathematics Challenge (2× Gold Intermediate, Silver Senior), AP Scholar with Distinction, Duke of Edinburgh (Bronze &amp; Silver)</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 7. CONTACT -->
-      <section id="contact" class="section contact-section">
-        <div class="section-label">
-          <h2 class="section-title">Get In Touch</h2>
-          <span class="section-meta">Direct Channels</span>
-        </div>
-
-        <div class="prose-block">
-          <p>
-            Interested in collaborating on native software systems, open-source scientific computing, or quantitative research? I'd love to hear from you.
-          </p>
-        </div>
-
-        <div class="contact-links-grid">
-          <a href="mailto:harsha.v.matta@gmail.com" class="btn-link primary">harsha.v.matta@gmail.com</a>
-          <a href="https://github.com/HarshaMatta" target="_blank" rel="noopener" class="btn-link">GitHub ↗</a>
-          <a href="https://linkedin.com/in/harshamatta" target="_blank" rel="noopener" class="btn-link">LinkedIn ↗</a>
-          <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn-link">Download Resume (PDF) ↗</a>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="site-footer">
-        <p>© 2026 Harsha Matta. Built with plain HTML, CSS, and minimal vanilla JavaScript.</p>
-        <p><a href="#about" class="btn-link">Back to top ↑</a></p>
-      </footer>
-
-    </main>
-
-  </div>
-
-  <!-- Accessible Lightbox Modal for Screenshots and Diagrams -->
-  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Media Preview">
-    <div class="lightbox-img-wrapper">
-      <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged preview">
-    </div>
-  </div>
-
-  <script src="script.js?v=20260904"></script>
+<body class="bg-canvas text-primary font-sans antialiased selection:bg-accent-tint selection:text-accent">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
