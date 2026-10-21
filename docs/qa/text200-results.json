@@ -1,0 +1,98 @@
+[
+  {
+    "font": "32px",
+    "route": "/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/next/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/inoffice/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/paatam/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/quant-lab/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/vrp/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/options/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/greeks/",
+    "scrollWidth": 375,
+    "width": 375
+  },
+  {
+    "font": "32px",
+    "route": "/",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "font": "32px",
+    "route": "/next/",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "font": "32px",
+    "route": "/inoffice/",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "font": "32px",
+    "route": "/paatam/",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "font": "32px",
+    "route": "/quant-lab/",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "font": "32px",
+    "route": "/vrp/",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "font": "32px",
+    "route": "/options/",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  {
+    "font": "32px",
+    "route": "/greeks/",
+    "scrollWidth": 1280,
+    "width": 1280
+  }
+]

@@ -1,21 +1,32 @@
 import { build } from 'esbuild';
-import { cp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { projects } from './src/data.js';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
 
 const origin = 'https://harshamatta.github.io';
 const pages = [
   {
     id: 'home',
     name: 'Harsha Matta',
-    description: 'Apps, mathematics, and ideas made tangible. Applied math and computer science at UNC–Chapel Hill.',
+    description: 'Projects and articles by Harsha Matta. Applied mathematics and computer science at UNC–Chapel Hill.',
   },
   ...projects,
+  {id:'articles',name:'Medium articles',description:'Articles by Harsha Matta on quantitative finance and mathematics.'},
 ];
 const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
 
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
 await cp('public', 'dist', { recursive: true });
+// Render the same React tree used by the client. This module is temporary and never published.
+const renderer = await build({
+  entryPoints: ['src/App.jsx'], bundle: true, platform: 'node', format: 'esm',
+  packages: 'external', jsx: 'automatic', write: false,
+});
+await writeFile('dist/.render.mjs', renderer.outputFiles[0].contents);
+const { default: App } = await import(new URL('./dist/.render.mjs', import.meta.url));
+await rm('dist/.render.mjs');
 const bundle = await build({
   entryPoints: { app: 'src/main.jsx' },
   bundle: true,
@@ -34,7 +45,7 @@ for (const page of pages) {
   const home = page.id === 'home';
   const directory = home ? 'dist' : `dist/${page.id}`;
   const base = home ? './' : '../';
-  const title = `${page.name}${home ? ' — Apps, mathematics & ideas' : ' — A project by Harsha Matta'}`;
+  const title = `${page.name}${home ? ' — Projects & articles' : ' — A project by Harsha Matta'}`;
   const url = `${origin}/${home ? '' : `${page.id}/`}`;
   await mkdir(directory, { recursive: true });
   await writeFile(`${directory}/index.html`, `<!doctype html>
@@ -42,7 +53,7 @@ for (const page of pages) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f7f2">
+  <meta name="theme-color" content="#fafafa">
   <title>${escape(title)}</title>
   <meta name="description" content="${escape(page.description)}">
   <link rel="canonical" href="${url}">
@@ -55,8 +66,8 @@ for (const page of pages) {
 </head>
 <body data-page="${page.id}">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div id="root"></div>
-  <noscript><h1>${escape(page.name)}</h1><p>${escape(page.description)}</p><p>Enable JavaScript to explore this interactive portfolio.</p></noscript>
+  <div id="root">${renderToString(React.createElement(App, { page: page.id }))}</div>
+  <noscript><p class="shell">Enable JavaScript to use the interactive samples. Project explanations, screenshots, and links remain available below.</p></noscript>
   <script type="module" src="${base}${script}"></script>
 </body>
 </html>
@@ -70,15 +81,17 @@ await writeFile('dist/404.html', `<!doctype html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f8f7f2">
+  <meta name="theme-color" content="#fafafa">
   <title>Page not found — Harsha Matta</title>
   <link rel="icon" type="image/svg+xml" href="${origin}/favicon.svg">
-  <link rel="stylesheet" href="${origin}/${stylesheet}">
+  <style>${await readFile('src/styles/tokens.css', 'utf8')}
+  *{box-sizing:border-box}body{margin:0;background:var(--background);color:var(--text);font:1rem/1.7 var(--font-body)}main{max-width:76rem;margin:auto;padding:clamp(24px,8vw,100px)}h1{font:400 clamp(2.75rem,7vw,5rem)/1.1 var(--font-display);letter-spacing:-.04em}p{max-width:40rem}.eyebrow{font-size:.8rem;letter-spacing:.12em;color:var(--accent)}.button{display:inline-flex;min-height:44px;align-items:center;background:var(--accent);color:white;padding:12px 20px;border-radius:var(--radius-small);text-decoration:none}a:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+  </style>
 </head>
 <body>
-  <main id="main"><section class="home-hero">
+  <main id="main" class="shell"><section class="research-heading">
     <p class="eyebrow">404 / PAGE NOT FOUND</p>
-    <h1>Let’s find your<br>way back.</h1>
+    <h1>Page not found</h1>
     <p>This page may have moved. Explore my work from the portfolio homepage.</p>
     <a class="button" href="${origin}/">Back to the portfolio →</a>
   </section></main>
@@ -92,4 +105,4 @@ ${pages.map((page) => `  <url><loc>${origin}/${page.id === 'home' ? '' : `${page
 </urlset>
 `);
 await writeFile('dist/.nojekyll', '');
-console.log('Built homepage, seven project pages, sitemap, and standalone 404 in dist/.');
+console.log('Built homepage, Articles, seven project routes, sitemap, and standalone 404 in dist/.');

@@ -1,0 +1,114 @@
+[
+  {
+    "route": "home",
+    "width": 375,
+    "footerLinks": 4,
+    "scroll": 375,
+    "smallSocial": 0
+  },
+  {
+    "route": "articles/",
+    "width": 375,
+    "footerLinks": 4,
+    "scroll": 375,
+    "smallSocial": 0
+  },
+  {
+    "route": "paatam/",
+    "width": 375,
+    "footerLinks": 4,
+    "scroll": 375,
+    "smallSocial": 0
+  },
+  {
+    "route": "greeks/",
+    "width": 375,
+    "footerLinks": 4,
+    "scroll": 375,
+    "smallSocial": 0
+  },
+  {
+    "route": "home",
+    "width": 768,
+    "footerLinks": 4,
+    "scroll": 768,
+    "smallSocial": 0
+  },
+  {
+    "route": "articles/",
+    "width": 768,
+    "footerLinks": 4,
+    "scroll": 768,
+    "smallSocial": 0
+  },
+  {
+    "route": "paatam/",
+    "width": 768,
+    "footerLinks": 4,
+    "scroll": 768,
+    "smallSocial": 0
+  },
+  {
+    "route": "greeks/",
+    "width": 768,
+    "footerLinks": 4,
+    "scroll": 768,
+    "smallSocial": 0
+  },
+  {
+    "route": "home",
+    "width": 1159,
+    "footerLinks": 4,
+    "scroll": 1159,
+    "smallSocial": 0
+  },
+  {
+    "route": "articles/",
+    "width": 1159,
+    "footerLinks": 4,
+    "scroll": 1159,
+    "smallSocial": 0
+  },
+  {
+    "route": "paatam/",
+    "width": 1159,
+    "footerLinks": 4,
+    "scroll": 1159,
+    "smallSocial": 0
+  },
+  {
+    "route": "greeks/",
+    "width": 1159,
+    "footerLinks": 4,
+    "scroll": 1159,
+    "smallSocial": 0
+  },
+  {
+    "route": "home",
+    "width": 1440,
+    "footerLinks": 4,
+    "scroll": 1440,
+    "smallSocial": 0
+  },
+  {
+    "route": "articles/",
+    "width": 1440,
+    "footerLinks": 4,
+    "scroll": 1440,
+    "smallSocial": 0
+  },
+  {
+    "route": "paatam/",
+    "width": 1440,
+    "footerLinks": 4,
+    "scroll": 1440,
+    "smallSocial": 0
+  },
+  {
+    "route": "greeks/",
+    "width": 1440,
+    "footerLinks": 4,
+    "scroll": 1440,
+    "smallSocial": 0
+  }
+]

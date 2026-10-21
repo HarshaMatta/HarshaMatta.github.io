@@ -1,0 +1,327 @@
+[
+  {
+    "route": "home",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": [],
+    "recheckedAfterImageLoad": true
+  },
+  {
+    "route": "next/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "inoffice/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "paatam/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "quant-lab/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "vrp/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "options/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "greeks/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "articles/",
+    "width": 375,
+    "actual": 375,
+    "broken": [],
+    "h1": 1,
+    "scroll": 375,
+    "smallControls": []
+  },
+  {
+    "route": "home",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "next/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "inoffice/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "paatam/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "quant-lab/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "vrp/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "options/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "greeks/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "articles/",
+    "width": 768,
+    "actual": 768,
+    "broken": [],
+    "h1": 1,
+    "scroll": 768,
+    "smallControls": []
+  },
+  {
+    "route": "home",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "next/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "inoffice/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "paatam/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "quant-lab/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "vrp/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "options/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "greeks/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "articles/",
+    "width": 1280,
+    "actual": 1280,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1280,
+    "smallControls": []
+  },
+  {
+    "route": "home",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "next/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "inoffice/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "paatam/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "quant-lab/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "vrp/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "options/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "greeks/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  },
+  {
+    "route": "articles/",
+    "width": 1440,
+    "actual": 1440,
+    "broken": [],
+    "h1": 1,
+    "scroll": 1440,
+    "smallControls": []
+  }
+]

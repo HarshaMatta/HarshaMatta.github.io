@@ -1,0 +1,8 @@
+:root {
+ --background:#fafafa; --surface:#ffffff; --surface-muted:#f0f2f5;
+ --text:#171b23; --muted:#5d6674; --border:#8993a1; --divider:#dfe3e8;
+ --accent:#2858a5; --accent-surface:#edf2fc; --focus:#2858a5;
+ --font-body:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ --font-display:var(--font-body); --content-width:74rem; --gutter:clamp(20px,4vw,56px);
+ --radius:16px; --radius-small:8px;
+}

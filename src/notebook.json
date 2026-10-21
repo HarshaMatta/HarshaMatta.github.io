@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Realized volatility",
+    "source": "import numpy as np\n\n#  ln(P_t / P_{t-1})\nmerged_df['spx_log_ret'] = np.log(merged_df['spx_close'] / merged_df['spx_close'].shift(1))\n\n# rollingStandardDeviation\nmerged_df['spx_roll_std'] = merged_df['spx_log_ret'].rolling(window=30).std()\n\n# annualizeDailyVolatility\nmerged_df['spx_realized_vol'] = merged_df['spx_roll_std'] * np.sqrt(252)\n\n# tail\nmerged_df[['spx_close', 'spx_log_ret', 'spx_roll_std', 'spx_realized_vol']].tail()",
+    "cell": 3
+  },
+  {
+    "label": "Forward alignment",
+    "source": "# 1. Shift the realized volatility backwards by 30 trading days\n# shiftThirty\nmerged_df['forward_realized_vol'] = merged_df['spx_realized_vol'].shift(-30)\n\n# 2. dropFinalThirty\nmaster_df = merged_df.dropna(subset=['forward_realized_vol']).copy()\n\n\nmaster_dataset = master_df[['spx_close', 'vix_decimal', 'forward_realized_vol']]\nmaster_dataset.to_csv('../src/data/master_dataset.csv')\n\nprint(\"Aligned master dataset exported successfully!\")\nprint(f\"Original rows: {len(merged_df)}\")\nprint(f\"New rows (should be exactly 30 fewer): {len(master_dataset)}\")",
+    "cell": 11
+  }
+]

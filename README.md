@@ -1,6 +1,12 @@
 # Harsha Matta — portfolio
 
-Source for https://harshamatta.github.io/, based on the supplied October 21, 2026 portfolio. React is bundled with esbuild into eight directly accessible static pages. There are no API keys, external fonts, analytics, or backend services.
+Source for https://harshamatta.github.io/, based on the supplied October 21, 2026 portfolio. React is bundled with esbuild into nine directly accessible static pages. There are no API keys, external fonts, analytics, or backend services.
+
+## Current design
+
+The simplified project-first revision was reviewed locally and approved for publication on October 21, 2026. The retained GitHub Pages workflow deploys `main` to https://harshamatta.github.io/.
+
+See `DESIGN.md` for visual rules, `docs/design-direction.md` for the research/route decisions, and `docs/qa.md` for verification. Real app screenshots lead the showcases; the finance and attendance controls are small interactive previews.
 
 ## Build and verify
 
@@ -18,13 +24,17 @@ Open http://127.0.0.1:4173/ over HTTP. The `dist/` directory is generated and ig
 
 ## Pages and editing
 
-- `/`: selected work, writing, about, and contact.
-- `/next/`, `/inoffice/`, `/paatam/`: app showcases and illustrative browser demos.
-- `/quant-lab/`, `/vrp/`, `/options/`, `/greeks/`: technical project showcases and browser demonstrations.
+- `/`: projects, Medium articles, open-source contributions, and social links.
+- `/articles/`: all four Medium articles with original thumbnails and publication dates.
+- `/inoffice/`, `/paatam/`: app screenshots, phone frames, and concise product descriptions. InOffice also includes an attendance demo.
+- Next cards link directly to the independent `/projNext/` product site. `/next/` remains a small compatibility page with that same destination.
+- `/quant-lab/`: real local interface screenshots and the two strategy-lab modes.
+- `/vrp/`: Streamlit screenshot/link, companion article, historical chart, and original notebook cells.
+- `/options/`, `/greeks/`: technical showcases and calculators; Greeks leads with the original Streamlit project.
 
-Edit copy and links in `src/data.js`, presentation and browser interactions in `src/main.jsx`, and styling in `src/style.css`. `src/math.js` implements the bounded educational pricing model; `src/vrp-data.json` holds historical monthly observations. `build.mjs` generates route-specific HTML, metadata, sitemap, `.nojekyll`, and a standalone 404 page.
+Edit copy and links in `src/data.js`, route composition in `src/App.jsx`, shared primitives in `src/components.jsx`, and browser samples in `src/demos.jsx`. `src/Chart.jsx` owns accessible charts/data tables; `src/styles/tokens.css` and `src/style.css` own tokens/layout. `src/main.jsx` hydrates the pre-rendered content. `src/math.js` implements the bounded educational pricing model; `src/vrp-data.json` holds historical monthly observations. `build.mjs` pre-renders the same React page tree, emits route-specific HTML/metadata, bundles content-hashed scripts/styles, and generates the sitemap, `.nojekyll`, and standalone 404. The temporary server-rendering module is removed before packaging. No runtime server is needed.
 
-`public/` is copied intact into the output. It contains both supplied screenshots and historical assets. Keep `assets/resume.pdf`, `assets/Harsha_Matta_Resume.pdf`, and historical screenshot URLs available even though the new interface has no resume link. The old `/paatam/` page is replaced with the supplied original Flutter showcase. The independently hosted `/projNext/` project site is outside this repository and remains untouched.
+`public/` is copied intact into the output. It contains both supplied screenshots and historical assets. Keep `assets/resume.pdf`, `assets/Harsha_Matta_Resume.pdf`, and historical screenshot URLs available even though the new interface has no resume link. The Paatam page represents the definitive Flutter app with the developer-confirmed screenshots. The independently hosted `/projNext/` project site is outside this repository and remains untouched.
 
 ## Deployment
 
@@ -34,6 +44,6 @@ Review changes and run the commands above before pushing. Check the deployment w
 
 ## Demonstration boundaries
 
-Next approvals affect only browser state. Attendance data is fictional; its CSV export never accesses location. Paatam illustrates five characters in five scripts from the original Flutter concept. Quant Lab illustrates a workflow without a backend. VRP displays committed historical observations, not a live feed. Options and Greeks use hypothetical inputs with fixed strike $100 and annual rate 4%; they do not port the original Python applications.
+The removed Next, Paatam, and Quant workflow samples are no longer rendered. Attendance data is fictional and exported as a sample CSV. Paatam presents the developer-confirmed custom spaced repetition system and definitive Flutter screenshots. Quant Lab screenshots were captured from its actual FastAPI app; its sample backtest is not a performance claim. VRP displays committed historical observations, not a live feed. Options and Greeks use hypothetical inputs with fixed strike $100 and annual rate 4%; they do not port the original Python applications.
 
 See `SOURCE-NOTES.md` for supplied research evidence and claim boundaries. Its original inspection and testing statements describe the supplied package, not verification of native apps during this replacement.

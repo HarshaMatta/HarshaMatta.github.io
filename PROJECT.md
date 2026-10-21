@@ -1,15 +1,15 @@
-# Portfolio implementation
+# Portfolio architecture
 
-The October 21, 2026 supplied portfolio replaces the previous React/TypeScript/Vite single-page design. The active implementation uses React JSX, esbuild, local CSS, and route-specific static HTML. The old theme, sidebar, modals, and design-specific simulated-DOM tests have been removed.
+Nine static React pages are generated with esbuild and React’s server renderer. `src/App.jsx` composes each route; `src/components.jsx` contains shared presentation primitives; `src/demos.jsx` contains browser-only state and controls; `src/Chart.jsx` provides plots, summaries, and data tables. `src/main.jsx` hydrates the same tree. No framework, router, server, animation library, or additional runtime dependency was introduced.
 
-## Interfaces and publication
+`src/data.js` exports the seven project records and four article records. Each project ID is its route; the homepage ID is `home`, and the article index ID is `articles`. Next cards link directly to `/projNext/`. Relative paths come from the shared path context so pages work at the domain root or beneath a project subpath. The `.nojekyll` marker, public routes, historical static assets, and resume URLs are retained. The separate `/projNext/` site is untouched.
 
-`src/data.js` exports the seven project records and writing links used by both React and the build. Each project ID is its static route. Each generated HTML document sets `body[data-page]` to choose its React page; the homepage uses `home`. Links and bundled resources are relative to the page directory. No server router is required.
+`public/` is copied intact to generated `dist/`. The build pre-renders useful initial HTML, creates route-specific metadata, sitemap, standalone 404, and hashed JavaScript/CSS. The temporary render module is deleted. `docs/`, QA screenshots, and design references stay outside the deployment artifact.
 
-`public/` is the source of static assets. `dist/` is the complete deployable artifact; never publish the source repository root. The build owns all page HTML, `sitemap.xml`, `404.html`, and `.nojekyll`. The standalone 404 uses absolute production links so it also works for nested missing paths. Keep the separate `/projNext/` repository/site untouched.
+## Checks
 
-## Verification
+`npm test` preserves the independent price references and model invariants across 27 parameter combinations. `npm run build` generates the static artifact. `npm run test:site` verifies the nine initial HTML pages, route links/anchors, local resources, chart summaries/tables, static asset preservation, PDFs, metadata, sitemap, and 404. Actual browser checks and remaining limits are recorded in `docs/qa.md`.
 
-`npm test` checks independent option-price references and model invariants over 27 combinations. After `npm run build`, `npm run test:site` checks all eight HTML routes, resource references, data-driven screenshots, canonical metadata, sitemap, static asset preservation, PDF headers, and the standalone 404.
+## Review and publication
 
-Browser review covers all pages at mobile, tablet, and desktop sizes; keyboard focus; filters; approval/discard/reset; attendance CSV export; flashcards; strategy steps; historical filters; finance controls; and screenshot galleries. GitHub Actions repeats mathematical and output checks before deployment.
+The simplified revision was approved for publication on October 21, 2026. The retained GitHub Actions workflow publishes `dist/` on pushes to `main`. Run the checks above before publishing and verify the completed workflow and deployed routes. Follow README instructions for local preview.
