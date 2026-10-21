@@ -16,3 +16,9 @@ This is a portfolio implementation, not a full native-app audit. No private repo
 Public sources: https://harshamatta.github.io/ ; https://harshamatta.github.io/projNext/ ; https://github.com/HarshaMatta ; https://medium.com/@harsha.v.matta . Specific repository/article links are in `src/data.js`.
 
 Design direction: calm product storytelling, real screenshots, short technical explanations, immediately usable browser samples. Reference patterns reviewed: Things feature storytelling (https://culturedcode.com/things/features/) and Linear feature organization (https://linear.app/features). No branding or proprietary layouts copied. GitHub Pages static constraints reviewed at https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages .
+
+## Saved assets integrated after the initial replacement
+
+The Paatam gallery uses the four existing `public/assets/paatam/screen*.jpg` images. The settings screenshot labels the interface Paatam v2.0; this gallery is separate from the original Flutter walkthrough and browser demo. These images do not establish release status or verify handwriting/AI features. Local project notes in `01_Projects/Paatam.md` describe a Swift migration with testing and Apple Pencil work still listed as milestones.
+
+InOffice's existing `public/assets/trackinoffice/screen3.jpg` supplies the workplace settings screenshot in its gallery. Captions describe visible UI rather than infer additional tested behavior.
