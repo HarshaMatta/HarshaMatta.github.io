@@ -16,14 +16,19 @@ const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;
 await rm('dist', { recursive: true, force: true });
 await mkdir('dist', { recursive: true });
 await cp('public', 'dist', { recursive: true });
-await build({
-  entryPoints: ['src/main.jsx'],
+const bundle = await build({
+  entryPoints: { app: 'src/main.jsx' },
   bundle: true,
   minify: true,
-  outfile: 'dist/app.js',
+  outdir: 'dist',
+  entryNames: '[name]-[hash]',
+  metafile: true,
   jsx: 'automatic',
   define: { 'process.env.NODE_ENV': '"production"' },
 });
+const [scriptPath, scriptOutput] = Object.entries(bundle.metafile.outputs).find(([, output]) => output.entryPoint);
+const script = scriptPath.replace(/^dist\//, '');
+const stylesheet = scriptOutput.cssBundle.replace(/^dist\//, '');
 
 for (const page of pages) {
   const home = page.id === 'home';
@@ -46,13 +51,13 @@ for (const page of pages) {
   <meta property="og:description" content="${escape(page.description)}">
   <meta property="og:url" content="${url}">
   <link rel="icon" type="image/svg+xml" href="${base}favicon.svg">
-  <link rel="stylesheet" href="${base}app.css">
+  <link rel="stylesheet" href="${base}${stylesheet}">
 </head>
 <body data-page="${page.id}">
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="root"></div>
   <noscript><h1>${escape(page.name)}</h1><p>${escape(page.description)}</p><p>Enable JavaScript to explore this interactive portfolio.</p></noscript>
-  <script type="module" src="${base}app.js"></script>
+  <script type="module" src="${base}${script}"></script>
 </body>
 </html>
 `);
@@ -68,7 +73,7 @@ await writeFile('dist/404.html', `<!doctype html>
   <meta name="theme-color" content="#f8f7f2">
   <title>Page not found — Harsha Matta</title>
   <link rel="icon" type="image/svg+xml" href="${origin}/favicon.svg">
-  <link rel="stylesheet" href="${origin}/app.css">
+  <link rel="stylesheet" href="${origin}/${stylesheet}">
 </head>
 <body>
   <main id="main"><section class="home-hero">
