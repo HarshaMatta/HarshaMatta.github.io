@@ -44,3 +44,7 @@ Production build, site checks, and whitespace checks passed. Browser checks cove
 ## Publication verification
 
 The first deployment completed successfully. Comparing deployed HTML against the local build exposed platform-dependent floating-point tails in SVG chart coordinates (about 10⁻¹³ pixels). Chart coordinates now round to four decimal places before rendering, leaving the pricing model and displayed financial values unchanged while making server/client SVG attributes consistent. Final publication checks compare deployed routes and asset bytes against the reviewed local build.
+
+## Layered hover effect
+
+A CSS-only hover/focus lift now covers project artwork, paired Next phones, article thumbnails, related-article thumbnails, and interactive screenshot frames. The project card moves 4px; its artwork moves farther, with the Next phones moving an additional 9px and 15px. The selectors are gated by fine pointer, hover support, and no reduced-motion preference. No dimensions, link targets, or pricing calculations change. Build, static site checks, and whitespace checks passed. Browser keyboard focus verified computed transforms of −4px, −9px, and −15px and zero horizontal overflow. The user reviewed the local preview and approved publication on October 21, 2026.

@@ -207,7 +207,6 @@ p {
   transition: box-shadow .18s, transform .18s;
 }
 .project-card:hover {
-  transform: translateY(-3px);
   box-shadow: 0 14px 32px #17213b0d;
   border-color: #bcc6d5;
 }
@@ -1742,4 +1741,26 @@ caption {
     height: 40px;
     border-radius: 11px;
   }
+}
+
+/* Layered hover lift: artwork moves farther than its card, without layout shifts. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-card {
+    transition: transform 260ms cubic-bezier(.2,.7,.3,1), box-shadow 260ms, border-color 260ms;
+  }
+  .card-art > img, .next-phone-pair img, .formula-art,
+  .article-card > a:first-child img, .project-article img,
+  .device-frame, .desktop-frame {
+    transition: transform 360ms cubic-bezier(.2,.7,.3,1);
+  }
+  .project-card:is(:hover, :focus-visible) { transform: translateY(-4px); }
+  .project-card:is(:hover, :focus-visible) .card-art > img { transform: translateY(-10px); }
+  .project-card:is(:hover, :focus-visible) .formula-art { transform: translateY(-7px); }
+  .project-card:is(:hover, :focus-visible) .next-phone-pair img:first-child { transform: translateY(-9px); }
+  .project-card:is(:hover, :focus-visible) .next-phone-pair img:last-child { transform: translateY(-15px); }
+  .article-card > a:first-child:is(:hover, :focus-visible) img { transform: translateY(-5px); }
+  .project-article:is(:hover, :focus-visible) img { transform: translateY(-3px); }
+  .device-frame:is(:hover, :focus-visible), .desktop-frame:is(:hover, :focus-visible) { transform: translateY(-6px); }
+  .paired-phones:hover .media-figure:first-child .device-frame { transform: translateY(-7px); }
+  .paired-phones:hover .media-figure:last-child .device-frame { transform: translateY(-11px); }
 }
