@@ -7,8 +7,10 @@ export default function Chart({ series, xValues, axis, xLabel, summary, activeIn
   const values = series.flatMap((item) => item.values);
   const minimum = Math.min(...values), maximum = Math.max(...values);
   const span = maximum - minimum || 1;
-  const x = (index) => 84 + index / Math.max(xValues.length - 1, 1) * 604;
-  const y = (value) => 220 - (value - minimum) / span * 170;
+  // Avoid platform-specific libm rounding differences in server/client SVG attributes.
+  const coordinate = (value) => Number(value.toFixed(4));
+  const x = (index) => coordinate(84 + index / Math.max(xValues.length - 1, 1) * 604);
+  const y = (value) => coordinate(220 - (value - minimum) / span * 170);
   const first = String(xValues[0]), last = String(xValues.at(-1));
   return <figure className="chart-figure">
     <div className="chart-heading"><span>{axis}</span><span>{xLabel}</span></div>
