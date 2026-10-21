@@ -6,7 +6,7 @@ This is a portfolio implementation, not a full native-app audit. No private repo
 |---|---|---|
 | Next | Private `projNext`: `APP_OVERVIEW.md`, `docs/index.html`, MarkdownFileSystemEngine.swift, SchedulingConflictValidator.swift, recursive tree; existing public product site screenshots | `6498bba6525510feb9df7dc688181e08958617f4`; selected storage/conflict logic read, full app not built. Existing screenshots are not newly generated app output. |
 | InOffice | Existing personal portfolio screenshots and supplied developer/resume descriptions | Native repo not found in accessible inventory. Features are developer-reported. Browser data fictional. |
-| Paatam | Public `paatam`: `lib/main.dart`, `lib/FlashPage.dart`, bundled character data, `lib/FourPage.dart` | `77a46e6c66c66665ed19bca6e5e69b310b7adf82`; original Flutter flashcards. Stub quiz is not promoted as complete. Unpublished Swift rewrite excluded. |
+| Paatam | Public `paatam`: `lib/main.dart`, `lib/FlashPage.dart`, bundled character data, `lib/FourPage.dart` | `77a46e6c66c66665ed19bca6e5e69b310b7adf82`; original Flutter flashcards. Stub quiz is not promoted as complete. |
 | Quant Strategy Lab | `docs/architecture.md`, `src/mcp_quant/strategies.py`, repository tree | `2ee78b077c0b096c0dc927810e010a2051315570`; actual SMA/RSI/channel implementations read. Test files exist, not executed. |
 | VRP | `src/app.py`, committed CSV, repository tree | `8c24aedfa9822591ed3d489508ea7328a2aafa0e`; 196 monthly last-available observations Jan2010–Apr2026. Uses VIX decimal and forward realized vol scaled to percentages. Methodology not independently validated. |
 | Options Pricing | `Streamlit_OptionsProfit.py` | `7ac5dffcbe7b666dcd5dc49a3852463ebefae251`; original historical tool distinct from newly implemented browser model. |
@@ -19,6 +19,6 @@ Design direction: calm product storytelling, real screenshots, short technical e
 
 ## Saved assets integrated after the initial replacement
 
-The Paatam gallery uses the four existing `public/assets/paatam/screen*.jpg` images. The settings screenshot labels the interface Paatam v2.0; this gallery is separate from the original Flutter walkthrough and browser demo. These images do not establish release status or verify handwriting/AI features. Local project notes in `01_Projects/Paatam.md` describe a Swift migration with testing and Apple Pencil work still listed as milestones.
+The Paatam page uses the four existing `public/assets/paatam/screen*.jpg` images and `public/assets/paatam/icon.jpg`. The developer confirmed that these screenshots show the definitive Flutter app, including its refreshed interface. They are presented directly as Paatam screenshots, without separate version labels. The browser flashcard sample remains an illustration rather than a port of the app.
 
 InOffice's existing `public/assets/trackinoffice/screen3.jpg` supplies the workplace settings screenshot in its gallery. Captions describe visible UI rather than infer additional tested behavior.
