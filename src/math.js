@@ -1,0 +1,2 @@
+export function cdf(x){const t=1/(1+0.2316419*Math.abs(x));const d=0.3989422804014327*Math.exp(-x*x/2);const p=1-d*t*(0.319381530+t*(-0.356563782+t*(1.781477937+t*(-1.821255978+t*1.330274429))));return x>=0?p:1-p;}
+export function model(S=100,sigma=.25,T=1,type='call'){const K=100,r=.04,d1=(Math.log(S/K)+(r+sigma*sigma/2)*T)/(sigma*Math.sqrt(T)),d2=d1-sigma*Math.sqrt(T),disc=K*Math.exp(-r*T);return {price:type==='call'?S*cdf(d1)-disc*cdf(d2):disc*cdf(-d2)-S*cdf(-d1),delta:cdf(d1)-(type==='put'?1:0),gamma:Math.exp(-d1*d1/2)/(Math.sqrt(2*Math.PI)*S*sigma*Math.sqrt(T))};}
