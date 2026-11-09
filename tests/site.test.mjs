@@ -42,6 +42,24 @@ for (const route of routes) {
   }
 }
 
+// Each released Apple app must have a separate direct App Store link on the homepage
+// and on its own project page, rather than a nested link inside a card anchor.
+const expectedAppStoreLinks = {
+  next: 'https://apps.apple.com/us/app/projectnext/id6781007283',
+  inoffice: 'https://apps.apple.com/us/app/trackinoffice/id6762209341',
+  paatam: 'https://apps.apple.com/us/app/paatam/id6670503097',
+};
+const homeHtml = await readFile(resolve(output, 'index.html'), 'utf8');
+for (const [id, url] of Object.entries(expectedAppStoreLinks)) {
+  assert.equal(projects.find(p => p.id === id)?.appStore, url, `Incorrect App Store URL for ${id}`);
+  const detailHtml = await readFile(resolve(output, id, 'index.html'), 'utf8');
+  assert.ok(homeHtml.includes(`href="${url}"`), `Missing homepage App Store link: ${id}`);
+  assert.ok(detailHtml.includes(`href="${url}"`), `Missing project-page App Store link: ${id}`);
+  assert.ok(detailHtml.includes('View on App Store'), `Missing App Store call to action: ${id}`);
+}
+// Store buttons are siblings of the card's main anchor, not nested inside it.
+assert.match(homeHtml, /class="card-actions"><a class="card-store-link"/);
+
 // Check the data-driven links and screenshots rendered by React as well as HTML shells.
 const assets = new Set();
 for (const project of projects) {
