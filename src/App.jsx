@@ -7,9 +7,12 @@ import notebook from './notebook.json';
 function ProjectHeading({project,children}) {
   return <div className="project-heading"><div className="project-identity"><Icon project={project}/><h1>{project.name}</h1></div><ArticleLink project={project}/><p className="lead">{project.description}</p>{children}<Tags values={project.tech}/></div>;
 }
-function SourceLink({project}) {return project.source && <a className="text-button" href={project.source}>GitHub ↗</a>;}
+function SourceLink({project}) {return project.source && <a className="text-button" href={project.source}>{project.id === 'next' ? 'Project site ↗' : 'GitHub ↗'}</a>;}
+function AppStoreLink({project, className='button'}) {
+ return project.appStore && <a className={className} href={project.appStore} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.name} on the App Store (opens in new tab)`}>View on App Store ↗</a>;
+}
 function NativePage({project}) {
- return <><section className="native-hero"><ProjectHeading project={project}><div className="button-row"><a className="button" href="#screenshots">Screenshots ↓</a><SourceLink project={project}/></div></ProjectHeading><div className="product-visual">{project.id==='paatam'?<div className="paired-phones"><Screenshot name="paatam/screen1.jpg" caption="Paatam character categories" portrait eager/><Screenshot name="paatam/screen4.jpg" caption="Paatam character review" portrait eager/></div>:<Screenshot name={project.image} caption="InOffice attendance dashboard" portrait eager/>}</div></section>
+ return <><section className="native-hero"><ProjectHeading project={project}><div className="button-row"><AppStoreLink project={project}/><a className="text-button" href="#screenshots">Screenshots ↓</a><SourceLink project={project}/></div></ProjectHeading><div className="product-visual">{project.id==='paatam'?<div className="paired-phones"><Screenshot name="paatam/screen1.jpg" caption="Paatam character categories" portrait eager/><Screenshot name="paatam/screen4.jpg" caption="Paatam character review" portrait eager/></div>:<Screenshot name={project.image} caption="InOffice attendance dashboard" portrait eager/>}</div></section>
  {project.id==='paatam'?<section className="section features-section"><SectionTitle title="Spaced repetition for Indian languages"/><div className="feature-grid">{project.features.map(([title,body])=><article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div></section>:<section className="section"><SectionTitle title="Attendance demo"/><OfficeDemo/></section>}
  <div id="screenshots"><ScreenshotGallery project={project}/></div></>;
 }
@@ -27,12 +30,15 @@ function FinancePage({project}) {
  <section className="section" id="demo"><SectionTitle title={project.id==='greeks'?'Interactive preview':'Black–Scholes calculator'}/><FinanceDemo kind={project.id}/></section></>;
 }
 function ProjectPage({project}) {
- if(project.id==='next')return <><Nav/><main id="main" className="shell" tabIndex="-1"><section className="simple-heading"><ProjectHeading project={project}><a className="button" href={project.destination}>Open Next product site ↗</a></ProjectHeading></section></main><Footer/></>;
+ if(project.id==='next')return <><Nav/><main id="main" className="shell" tabIndex="-1"><section className="simple-heading"><ProjectHeading project={project}><div className="button-row"><AppStoreLink project={project}/><a className="text-button" href={project.destination}>Next product site ↗</a></div></ProjectHeading></section></main><Footer/></>;
  return <div className={`project-page ${project.id}`} style={{'--accent':project.color}}><Nav/><main id="main" className="shell" tabIndex="-1">{['inoffice','paatam'].includes(project.id)?<NativePage project={project}/>:project.id==='quant-lab'?<QuantPage project={project}/>:project.id==='vrp'?<VrpPage project={project}/>:<FinancePage project={project}/>}</main><Footer/></div>;
 }
 function ProjectCard({project}) {
  const {link}=usePaths();
- return <a href={link(project.id)} className={`project-card card-${project.id}`}><div className="card-art">{project.id==='next'?<div className="next-phone-pair"><Media name="next/iphone-dashboard.webp" alt="Next iPhone dashboard"/><Media name="next/iphone-schedule.webp" alt="Next iPhone schedule"/></div>:project.image?<Media name={project.image} alt={`${project.name} application screenshot`}/>:<div className="formula-art" aria-hidden="true"><span>C = S N(d₁) − K e⁻ʳᵀ N(d₂)</span><svg viewBox="0 0 420 140"><path d="M20 120H400M25 125V10"/><path d="M35 112C180 112 210 100 255 67S340 20 390 12" className="formula-curve"/></svg></div>}</div><div className="card-body"><div className="card-title"><Icon project={project}/><h3>{project.name}</h3><span aria-hidden="true">↗</span></div><p>{project.description}</p><Tags values={project.tech.slice(0,3)}/></div></a>;
+ return <article className={`project-card card-${project.id}`}>
+   <a href={link(project.id)} className="project-card-main"><div className="card-art">{project.id==='next'?<div className="next-phone-pair"><Media name="next/iphone-dashboard.webp" alt="Next iPhone dashboard"/><Media name="next/iphone-schedule.webp" alt="Next iPhone schedule"/></div>:project.image?<Media name={project.image} alt={`${project.name} application screenshot`}/>:<div className="formula-art" aria-hidden="true"><span>C = S N(d₁) − K e⁻ʳᵀ N(d₂)</span><svg viewBox="0 0 420 140"><path d="M20 120H400M25 125V10"/><path d="M35 112C180 112 210 100 255 67S340 20 390 12" className="formula-curve"/></svg></div>}</div><div className="card-body"><div className="card-title"><Icon project={project}/><h3>{project.name}</h3><span aria-hidden="true">↗</span></div><p>{project.description}</p><Tags values={project.tech.slice(0,3)}/></div></a>
+   {project.appStore && <div className="card-actions"><AppStoreLink project={project} className="card-store-link"/></div>}
+ </article>;
 }
 function ArticleList({limit}) {return <div className="article-grid">{articles.slice(0,limit).map(article=><ArticleCard article={article} key={article.id}/>)}</div>;}
 function Contributions() {

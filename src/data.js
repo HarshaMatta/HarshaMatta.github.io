@@ -39,7 +39,8 @@ export const projects = [
       "Next planning proposal for review before applying changes."
     ],
     "source": "https://harshamatta.github.io/projNext/",
-    "destination": "https://harshamatta.github.io/projNext/"
+    "destination": "https://harshamatta.github.io/projNext/",
+    "appStore": "https://apps.apple.com/us/app/projectnext/id6781007283"
   },
   {
     "id": "inoffice",
@@ -79,7 +80,8 @@ export const projects = [
       "Attendance dashboard with weekly, monthly, and yearly progress.",
       "Calendar view of office attendance.",
       "Workplace settings with geofence radius, location permissions, and office goals."
-    ]
+    ],
+    "appStore": "https://apps.apple.com/us/app/trackinoffice/id6762209341"
   },
   {
     "id": "paatam",
@@ -121,7 +123,8 @@ export const projects = [
         "Review characters, build mastery, and keep your learning preferences."
       ]
     ],
-    "source": "https://github.com/HarshaMatta/paatam"
+    "source": "https://github.com/HarshaMatta/paatam",
+    "appStore": "https://apps.apple.com/us/app/paatam/id6670503097"
   },
   {
     "id": "quant-lab",
